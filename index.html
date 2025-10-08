@@ -10,7 +10,6 @@
   <script defer src="app.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
   <header class="site-header">
     <div class="header-wrap">
       <a class="brand" href="#hero">MFİ</a>
@@ -69,44 +68,41 @@
           <li>C#/.NET, MSSQL, DevExpress</li>
           <li>ESP32, IoT, Embedded</li>
           <li data-i18n="hero.cvAi"></li>
-          <li>ERP/B2B2C Integrations</li>
+          <li data-i18n="hero.erp"></li>
         </ul>
       </div>
     </section>
 
-    <!-- HAKKIMDA -->
+    <!-- ABOUT -->
     <section id="about" class="container section">
       <h2 data-i18n="sections.about"></h2>
       <p id="aboutText" data-i18n="about.text"></p>
       <div class="about__grid">
         <div>
           <h3 data-i18n="about.focus"></h3>
-          <ul class="tags">
-            <li>Kurumsal Uygulamalar</li><li>IoT & ESP32</li><li>Görüntü İşleme/AI</li>
-            <li>ERP/CRM Entegrasyon</li><li>Test &amp; Doğrulama</li>
-          </ul>
+          <ul id="focusTags" class="tags"></ul>
         </div>
         <div>
           <h3 data-i18n="about.edu"></h3>
-          <p><strong>Erciyes Üniversitesi</strong> — Bilgisayar Mühendisliği (Lisans)</p>
-          <p><strong>Erciyes Üniversitesi</strong> — Makine Mühendisliği (Lisans)</p>
+          <p data-i18n="about.edu1"></p>
+          <p data-i18n="about.edu2"></p>
         </div>
       </div>
     </section>
 
-    <!-- YETENEKLER -->
+    <!-- SKILLS -->
     <section id="skills" class="container section">
       <h2 data-i18n="sections.skills"></h2>
       <div id="skillsGrid" class="skills-grid"></div>
     </section>
 
-    <!-- DENEYİM -->
+    <!-- EXPERIENCE -->
     <section id="experience" class="container section">
       <h2 data-i18n="sections.experience"></h2>
       <div id="experienceList" class="timeline"></div>
     </section>
 
-    <!-- PROJELER -->
+    <!-- PROJECTS -->
     <section id="projects" class="container section">
       <h2 data-i18n="sections.projects"></h2>
       <div class="filters">
@@ -119,7 +115,7 @@
       <div id="projectsGrid" class="cards"></div>
     </section>
 
-    <!-- İLETİŞİM (Tamamen Telegram) -->
+    <!-- CONTACT (Telegram-only iş akışları) -->
     <section id="contact" class="container section">
       <h2 data-i18n="sections.contact"></h2>
 
@@ -127,30 +123,29 @@
         <a class="btn contact-btn whats" id="btnWhats" target="_blank" rel="noopener" data-i18n="contact.whats"></a>
         <a class="btn contact-btn call" id="btnCall" data-i18n="contact.call"></a>
         <a class="btn contact-btn tg" id="btnTg" target="_blank" rel="noopener" data-i18n="contact.tg"></a>
-        <!-- SMS parametre ile eklenecek -->
+        <!-- SMS parametreli -->
       </div>
 
-      <!-- İletişim Talep Formu (opsiyonel alanlar) -->
       <form id="contactForm" class="form card" novalidate>
         <h3 data-i18n="form.title"></h3>
         <div class="grid-2">
           <label><span data-i18n="form.name"></span>
-            <input type="text" name="name" placeholder="" />
+            <input type="text" name="name" />
           </label>
           <label><span data-i18n="form.company"></span>
-            <input type="text" name="company" placeholder="" />
+            <input type="text" name="company" />
           </label>
         </div>
         <div class="grid-2">
           <label><span data-i18n="form.email"></span>
-            <input type="email" name="email" placeholder="" />
+            <input type="email" name="email" />
           </label>
           <label><span data-i18n="form.phone"></span>
-            <input type="tel" name="phone" placeholder="" />
+            <input type="tel" name="phone" />
           </label>
         </div>
         <label><span data-i18n="form.msg"></span>
-          <textarea name="message" rows="4" placeholder=""></textarea>
+          <textarea name="message" rows="4"></textarea>
         </label>
 
         <div class="checks">
@@ -167,12 +162,10 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <span class="centered">© <span id="year"></span> Mustafa Ferhat İmamoğlu</span>
   </footer>
 
-  <!-- GİRİŞ / YENİ MÜŞTERİ MODALI -->
   <dialog id="authModal" class="modal">
     <form method="dialog" class="modal__body">
       <h3 data-i18n="auth.title"></h3>
