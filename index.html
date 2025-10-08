@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mustafa Ferhat İmamoğlu — Yazılım Mühendisi</title>
+  <title>Mustafa Ferhat İmamoğlu — Portföy</title>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
   <link rel="stylesheet" href="styles.css" />
   <script defer src="config.js"></script>
@@ -15,27 +15,26 @@
     <div class="header-wrap">
       <a class="brand" href="#hero">MFİ</a>
 
-      <!-- Hamburger -->
-      <button id="menuToggle" class="menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+      <button id="menuToggle" class="menu-toggle" aria-label="Menu" aria-expanded="false">
         <svg class="icon-open" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.3 5.71 12 12.01l-6.3-6.3-1.41 1.41 6.29 6.3-6.3 6.29 1.42 1.42 6.3-6.3 6.29 6.3 1.41-1.42-6.3-6.29 6.3-6.3Z"/></svg>
       </button>
 
       <nav id="mainNav" class="nav">
-        <a data-i18n="nav.about" href="#about">Hakkımda</a>
-        <a data-i18n="nav.skills" href="#skills">Yetenekler</a>
-        <a data-i18n="nav.experience" href="#experience">Deneyim</a>
-        <a data-i18n="nav.projects" href="#projects">Projeler</a>
-        <a data-i18n="nav.contact" href="#contact">İletişim</a>
+        <a data-i18n="nav.about" href="#about"></a>
+        <a data-i18n="nav.skills" href="#skills"></a>
+        <a data-i18n="nav.experience" href="#experience"></a>
+        <a data-i18n="nav.projects" href="#projects"></a>
+        <a data-i18n="nav.contact" href="#contact"></a>
       </nav>
 
       <div class="header-actions">
-        <select id="langSelect" aria-label="Dil">
+        <select id="langSelect" aria-label="Language">
           <option value="tr">TR</option>
           <option value="en">EN</option>
         </select>
-        <button id="loginBtn" class="btn small outline" data-i18n="auth.login">Giriş Yap</button>
-        <button id="themeToggle" class="theme-toggle" aria-label="Tema">☀️</button>
+        <button id="loginBtn" class="btn small outline" data-i18n="auth.login"></button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Theme">☀️</button>
       </div>
     </div>
   </header>
@@ -45,8 +44,8 @@
     <section id="hero" class="hero container">
       <div class="hero__text">
         <h1>
-          <span class="muted" data-i18n="hero.hello">Merhaba,</span>
-          <span data-i18n="hero.iAm">ben</span>
+          <span class="muted" data-i18n="hero.hello"></span>
+          <span data-i18n="hero.iAm"></span>
           <span class="accent">Mustafa Ferhat İmamoğlu</span><span class="cursor">|</span>
         </h1>
         <p class="hero__lead">
@@ -56,42 +55,39 @@
           </strong>
         </p>
         <div class="hero__ctas">
-          <a class="btn primary" href="#projects" data-i18n="hero.viewProjects">Projelerimi Gör</a>
-          <a class="btn" href="#contact" data-i18n="hero.contactMe">İletişime Geç</a>
+          <a class="btn primary" href="#projects" data-i18n="hero.viewProjects"></a>
+          <a class="btn" href="#contact" data-i18n="hero.contactMe"></a>
         </div>
         <div id="heroMeta" class="hero__meta" hidden>
-          <!-- SHOW_LOCATION=false ise gizli kalır -->
           <span id="locChip">📍 Kayseri / Kocasinan</span>
-          <span>🧑‍💻 8+ yıl deneyim</span>
+          <span data-i18n="hero.years"></span>
         </div>
       </div>
       <div class="hero__card" id="heroCard">
-        <div class="hero__badge" data-i18n="hero.badge">Yazılım • Makine • Elektronik</div>
+        <div class="hero__badge" data-i18n="hero.badge"></div>
         <ul class="hero__bullets">
           <li>C#/.NET, MSSQL, DevExpress</li>
-          <li>ESP32, IoT, gömülü sistemler</li>
-          <li data-i18n="hero.cvAi">Görüntü işleme &amp; AI</li>
-          <li>ERP/B2B2C entegrasyonları</li>
+          <li>ESP32, IoT, Embedded</li>
+          <li data-i18n="hero.cvAi"></li>
+          <li>ERP/B2B2C Integrations</li>
         </ul>
       </div>
     </section>
 
     <!-- HAKKIMDA -->
     <section id="about" class="container section">
-      <h2 data-i18n="sections.about">Hakkımda</h2>
-      <p id="aboutText" data-i18n="about.text">
-        Yazılım geliştirme ve bilişim sistemleri alanında çok disiplinli projeler geliştiriyorum…
-      </p>
+      <h2 data-i18n="sections.about"></h2>
+      <p id="aboutText" data-i18n="about.text"></p>
       <div class="about__grid">
         <div>
-          <h3 data-i18n="about.focus">Odak Alanlarım</h3>
+          <h3 data-i18n="about.focus"></h3>
           <ul class="tags">
             <li>Kurumsal Uygulamalar</li><li>IoT & ESP32</li><li>Görüntü İşleme/AI</li>
             <li>ERP/CRM Entegrasyon</li><li>Test &amp; Doğrulama</li>
           </ul>
         </div>
         <div>
-          <h3 data-i18n="about.edu">Eğitim</h3>
+          <h3 data-i18n="about.edu"></h3>
           <p><strong>Erciyes Üniversitesi</strong> — Bilgisayar Mühendisliği (Lisans)</p>
           <p><strong>Erciyes Üniversitesi</strong> — Makine Mühendisliği (Lisans)</p>
         </div>
@@ -100,81 +96,73 @@
 
     <!-- YETENEKLER -->
     <section id="skills" class="container section">
-      <h2 data-i18n="sections.skills">Yetenekler</h2>
+      <h2 data-i18n="sections.skills"></h2>
       <div id="skillsGrid" class="skills-grid"></div>
     </section>
 
     <!-- DENEYİM -->
     <section id="experience" class="container section">
-      <h2 data-i18n="sections.experience">Deneyim</h2>
+      <h2 data-i18n="sections.experience"></h2>
       <div id="experienceList" class="timeline"></div>
     </section>
 
     <!-- PROJELER -->
     <section id="projects" class="container section">
-      <h2 data-i18n="sections.projects">Projeler</h2>
+      <h2 data-i18n="sections.projects"></h2>
       <div class="filters">
-        <button class="chip is-active" data-filter="all" data-i18n="filters.all">Tümü</button>
-        <button class="chip" data-filter="software" data-i18n="filters.software">Yazılım</button>
-        <button class="chip" data-filter="iot" data-i18n="filters.iot">IoT / Gömülü</button>
-        <button class="chip" data-filter="ai" data-i18n="filters.ai">Görüntü İşleme / AI</button>
-        <button class="chip" data-filter="automation" data-i18n="filters.automation">Otomasyon/Test</button>
+        <button class="chip is-active" data-filter="all" data-i18n="filters.all"></button>
+        <button class="chip" data-filter="software" data-i18n="filters.software"></button>
+        <button class="chip" data-filter="iot" data-i18n="filters.iot"></button>
+        <button class="chip" data-filter="ai" data-i18n="filters.ai"></button>
+        <button class="chip" data-filter="automation" data-i18n="filters.automation"></button>
       </div>
       <div id="projectsGrid" class="cards"></div>
     </section>
 
-    <!-- İLETİŞİM -->
+    <!-- İLETİŞİM (Tamamen Telegram) -->
     <section id="contact" class="container section">
-      <h2 data-i18n="sections.contact">İletişim</h2>
+      <h2 data-i18n="sections.contact"></h2>
 
       <div class="contact contact-grid" id="contactButtons">
-        <!-- WhatsApp -->
-        <a class="btn contact-btn whats"
-           href="https://wa.me/905550051800?text=Merhaba%20Mustafa%2C%20portf%C3%B6y%20sitenden%20yaz%C4%B1yorum."
-           target="_blank" rel="noopener" data-i18n="contact.whats">WhatsApp Görüşme Başlat</a>
-
-        <!-- Telefon -->
-        <a class="btn contact-btn call" href="tel:+905550051800" data-i18n="contact.call">Ara: +90 555 005 18 00</a>
-
-        <!-- Telegram -->
-        <a class="btn contact-btn tg" target="_blank" rel="noopener"
-           href="https://t.me/mustafaferhatimamoglu" data-i18n="contact.tg">Telegram: @mustafaferhatimamoglu</a>
-
-        <!-- SMS (parametre ile görünür). 
-             Eğer göstermek istersen config.js içinde SHOW_SMS=true yap, ve aşağıdaki satırı JS oluşturuyor. -->
+        <a class="btn contact-btn whats" id="btnWhats" target="_blank" rel="noopener" data-i18n="contact.whats"></a>
+        <a class="btn contact-btn call" id="btnCall" data-i18n="contact.call"></a>
+        <a class="btn contact-btn tg" id="btnTg" target="_blank" rel="noopener" data-i18n="contact.tg"></a>
+        <!-- SMS parametre ile eklenecek -->
       </div>
 
-      <!-- Formspree + Telegram (opsiyonel alanlar) -->
+      <!-- İletişim Talep Formu (opsiyonel alanlar) -->
       <form id="contactForm" class="form card" novalidate>
-        <h3 data-i18n="form.title">İletişim Formu</h3>
+        <h3 data-i18n="form.title"></h3>
         <div class="grid-2">
-          <label><span data-i18n="form.name">Ad Soyad</span>
-            <input type="text" name="name" placeholder="Adınız Soyadınız" />
+          <label><span data-i18n="form.name"></span>
+            <input type="text" name="name" placeholder="" />
           </label>
-          <label><span data-i18n="form.company">Firma</span>
-            <input type="text" name="company" placeholder="Firma adı" />
+          <label><span data-i18n="form.company"></span>
+            <input type="text" name="company" placeholder="" />
           </label>
         </div>
         <div class="grid-2">
-          <label><span data-i18n="form.email">E-posta</span>
-            <input type="email" name="email" placeholder="ornek@eposta.com" />
+          <label><span data-i18n="form.email"></span>
+            <input type="email" name="email" placeholder="" />
           </label>
-          <label><span data-i18n="form.phone">Telefon</span>
-            <input type="tel" name="phone" placeholder="+90 ..." />
+          <label><span data-i18n="form.phone"></span>
+            <input type="tel" name="phone" placeholder="" />
           </label>
         </div>
-        <label><span data-i18n="form.msg">Mesaj</span>
-          <textarea name="message" rows="4" placeholder="Projenizden bahsedin..."></textarea>
+        <label><span data-i18n="form.msg"></span>
+          <textarea name="message" rows="4" placeholder=""></textarea>
         </label>
 
         <div class="checks">
-          <label class="check"><input id="alsoTelegram" type="checkbox" /> <span data-i18n="form.alsoTg">Mesajı Telegram’dan da gönder</span></label>
+          <label class="check"><input id="alsoTelegram" type="checkbox" checked /> <span data-i18n="form.alsoTg"></span></label>
         </div>
 
         <div class="actions">
-          <button class="btn primary" type="submit" data-i18n="form.send">Gönder</button>
+          <button class="btn primary" type="submit" data-i18n="form.send"></button>
           <span id="formStatus" class="muted"></span>
         </div>
+
+        <p class="muted" data-i18n="form.noteTg"></p>
       </form>
     </section>
   </main>
@@ -187,32 +175,33 @@
   <!-- GİRİŞ / YENİ MÜŞTERİ MODALI -->
   <dialog id="authModal" class="modal">
     <form method="dialog" class="modal__body">
-      <h3 data-i18n="auth.title">Müşteri Portalı</h3>
-      <p class="muted" data-i18n="auth.desc">Giriş yapabilir veya yeni müşteri formunu doldurabilirsiniz.</p>
+      <h3 data-i18n="auth.title"></h3>
+      <p class="muted" data-i18n="auth.desc"></p>
       <div class="actions">
-        <button class="btn" value="login" data-i18n="auth.login">Giriş Yap</button>
-        <button class="btn primary" value="signup" data-i18n="auth.signup">Yeni Müşteri Ol</button>
-        <button class="btn outline" value="cancel" data-i18n="auth.cancel">Kapat</button>
+        <a class="btn" id="btnTgLogin" target="_blank" rel="noopener" data-i18n="auth.login"></a>
+        <button class="btn primary" value="signup" data-i18n="auth.signup"></button>
+        <button class="btn outline" value="cancel" data-i18n="auth.cancel"></button>
       </div>
       <div id="signupForm" class="card" hidden>
-        <h4 data-i18n="signup.title">Yeni Müşteri — Bilgi Formu</h4>
+        <h4 data-i18n="signup.title"></h4>
         <div class="grid-2">
-          <label><span data-i18n="signup.fullname">Ad Soyad</span><input name="s_fullname" /></label>
-          <label><span data-i18n="signup.company">Firma</span><input name="s_company" /></label>
+          <label><span data-i18n="signup.fullname"></span><input name="s_fullname" /></label>
+          <label><span data-i18n="signup.company"></span><input name="s_company" /></label>
         </div>
         <div class="grid-2">
-          <label><span data-i18n="signup.email">E-posta</span><input name="s_email" type="email" /></label>
-          <label><span data-i18n="signup.phone">Telefon</span><input name="s_phone" type="tel" /></label>
+          <label><span data-i18n="signup.email"></span><input name="s_email" type="email" /></label>
+          <label><span data-i18n="signup.phone"></span><input name="s_phone" type="tel" /></label>
         </div>
         <div class="grid-2">
-          <label><span data-i18n="signup.taxoffice">Vergi Dairesi</span><input name="s_tax_office" /></label>
-          <label><span data-i18n="signup.taxno">Vergi No / TCKN</span><input name="s_tax_no" /></label>
+          <label><span data-i18n="signup.taxoffice"></span><input name="s_tax_office" /></label>
+          <label><span data-i18n="signup.taxno"></span><input name="s_tax_no" /></label>
         </div>
-        <label><span data-i18n="signup.address">Fatura Adresi</span><textarea name="s_address" rows="3"></textarea></label>
+        <label><span data-i18n="signup.address"></span><textarea name="s_address" rows="3"></textarea></label>
         <div class="actions">
-          <button class="btn primary" id="submitSignup" type="button" data-i18n="signup.send">Gönder</button>
+          <button class="btn primary" id="submitSignup" type="button" data-i18n="signup.send"></button>
           <span id="signupStatus" class="muted"></span>
         </div>
+        <p class="muted" data-i18n="signup.note"></p>
       </div>
     </form>
   </dialog>
