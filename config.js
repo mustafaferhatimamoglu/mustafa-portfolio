@@ -1,12 +1,12 @@
-// ---- Site Parametreleri ----
+/* config.js */
 window.APP_CONFIG = {
-  LANG_DEFAULT: 'tr',       // index.html için TR varsayılan
+  LANG_DEFAULT: 'tr',       // index.html varsayılan dili
   SHOW_SMS: false,
   SHOW_LOCATION: false,
 
   TELEGRAM: {
     ENABLED: true,
-    BOT_TOKEN: '8463888693:AAHS2xsejdWebakw3DOklRljfR9SwQjOCak', // Canlıda .env + proxy önerilir
+    BOT_TOKEN: '8463888693:AAHS2xsejdWebakw3DOklRljfR9SwQjOCak',
     CHAT_ID: '6069420562',
     BOT_USERNAME: 'mustafaferhatimamoglu',
     START_PAYLOAD_PREFIX: 'site_',
