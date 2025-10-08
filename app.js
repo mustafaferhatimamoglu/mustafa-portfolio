@@ -3,13 +3,142 @@ const $ = (s, c=document) => c.querySelector(s);
 const $$ = (s, c=document) => [...c.querySelectorAll(s)];
 const CFG = window.APP_CONFIG || {};
 
+const getActiveProjectFilter = () => $('.chip.is-active')?.dataset.filter || 'all';
+
+const INLINE_FALLBACKS = {
+  tr: {
+    nav: { about: 'Hakkımda', skills: 'Yetenekler', experience: 'Deneyim', projects: 'Projeler', contact: 'İletişim' },
+    hero: {
+      hello: 'Merhaba,',
+      iAm: 'ben',
+      badge: 'Yazılım • Makine • Elektronik',
+      cvAi: 'Görüntü işleme & AI',
+      erp: 'ERP/B2B2C Entegrasyon',
+      viewProjects: 'Projelerimi Gör',
+      contactMe: 'İletişime Geç',
+      years: '🧑‍💻 8+ yıl deneyim'
+    },
+    sections: { about: 'Hakkımda', skills: 'Yetenekler', experience: 'Deneyim', projects: 'Projeler', contact: 'İletişim' },
+    about: {
+      text: 'Yazılım, makine ve elektronik disiplinlerini birleştiren uçtan uca çözümler geliştiriyorum.',
+      focus: 'Odak Alanlarım',
+      tags: ['Kurumsal Uygulamalar', 'IoT & ESP32', 'Görüntü İşleme / AI', 'ERP/CRM Entegrasyon', 'Doğrulama & Test'],
+      edu: 'Eğitim',
+      edu1: 'Erciyes Üniversitesi — Bilgisayar Mühendisliği (Lisans)',
+      edu2: 'Erciyes Üniversitesi — Makine Mühendisliği (Lisans)'
+    },
+    filters: { all: 'Tümü', software: 'Yazılım', iot: 'IoT / Gömülü', ai: 'Görüntü İşleme / AI', automation: 'Otomasyon/Test' },
+    contact: {
+      whats: 'WhatsApp Görüşme Başlat',
+      call: 'Ara: {phone}',
+      tg: 'Telegram: @{user}',
+      mail: 'E-posta Gönder'
+    },
+    form: {
+      title: 'İletişim Formu',
+      name: 'Ad Soyad',
+      company: 'Firma',
+      email: 'E-posta',
+      phone: 'Telefon',
+      msg: 'Mesaj',
+      send: 'Gönder'
+    },
+    auth: {
+      login: 'Giriş Yap',
+      title: 'Müşteri Portalı',
+      desc: 'Telegram üzerinden giriş ve onay akışı.',
+      signup: 'Yeni Müşteri Ol',
+      cancel: 'Kapat'
+    },
+    signup: {
+      title: 'Yeni Müşteri — Bilgi Formu',
+      fullname: 'Ad Soyad',
+      company: 'Firma',
+      email: 'E-posta',
+      phone: 'Telefon',
+      taxoffice: 'Vergi Dairesi',
+      taxno: 'Vergi No / TCKN',
+      address: 'Fatura Adresi',
+      send: 'Gönder',
+      note: 'Gönderimden sonra Telegram üzerinden iki aşamalı onay alınır.'
+    },
+    ui: { sending: 'Gönderiliyor…', sent: 'Gönderildi ✅', error: 'Hata' }
+  },
+  en: {
+    nav: { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', contact: 'Contact' },
+    hero: {
+      hello: 'Hello,',
+      iAm: 'I am',
+      badge: 'Software • Mechanical • Electronics',
+      cvAi: 'Computer Vision & AI',
+      erp: 'ERP/B2B2C Integrations',
+      viewProjects: 'View Projects',
+      contactMe: 'Contact Me',
+      years: '🧑‍💻 8+ years experience'
+    },
+    sections: { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', contact: 'Contact' },
+    about: {
+      text: 'I build end-to-end solutions that fuse software with mechanical and electronics disciplines.',
+      focus: 'Focus Areas',
+      tags: ['Corporate Applications', 'IoT & Embedded Systems', 'Computer Vision / AI', 'ERP/CRM Integration', 'Integration & Validation'],
+      edu: 'Education',
+      edu1: 'Erciyes University — Computer Engineering (BSc)',
+      edu2: 'Erciyes University — Mechanical Engineering (BSc)'
+    },
+    filters: { all: 'All', software: 'Software', iot: 'IoT / Embedded', ai: 'Computer Vision / AI', automation: 'Automation/Testing' },
+    contact: {
+      whats: 'Start WhatsApp Chat',
+      call: 'Call: {phone}',
+      tg: 'Telegram: @{user}',
+      mail: 'Send Email'
+    },
+    form: {
+      title: 'Contact Form',
+      name: 'Full Name',
+      company: 'Company',
+      email: 'Email',
+      phone: 'Phone',
+      msg: 'Message',
+      send: 'Send'
+    },
+    auth: {
+      login: 'Log In',
+      title: 'Client Portal',
+      desc: 'Sign-in and approvals are handled via Telegram.',
+      signup: 'Become a Client',
+      cancel: 'Close'
+    },
+    signup: {
+      title: 'New Client — Information',
+      fullname: 'Full Name',
+      company: 'Company',
+      email: 'Email',
+      phone: 'Phone',
+      taxoffice: 'Tax Office',
+      taxno: 'Tax No / National ID',
+      address: 'Billing Address',
+      send: 'Send',
+      note: 'A two-step approval is required via Telegram after submission.'
+    },
+    ui: { sending: 'Sending…', sent: 'Sent ✅', error: 'Error' }
+  }
+};
+
 let currentLang = localStorage.getItem('lang') || CFG.LANG_DEFAULT || 'tr';
+if(!INLINE_FALLBACKS[currentLang]) currentLang = 'tr';
 let DICT = null; // loaded JSON dictionary
 
 async function loadLangDict(lc){
-  const res = await fetch(`./lang/${lc}.json`, { cache: 'no-store' });
-  if(!res.ok) throw new Error('lang load failed: '+lc);
-  return await res.json();
+  const fallback = INLINE_FALLBACKS[lc] || INLINE_FALLBACKS.tr;
+  try{
+    const url = new URL(`lang/${lc}.json`, window.location.href);
+    const res = await fetch(url.toString(), { cache: 'no-store' });
+    if(!res.ok) throw new Error(`lang load failed: ${lc} (${res.status})`);
+    return await res.json();
+  }catch(err){
+    console.warn(`i18n fallback engaged for ${lc}`, err);
+    return fallback ? JSON.parse(JSON.stringify(fallback)) : {};
+  }
 }
 function t(path, vars={}){
   const parts = path.split('.');
@@ -20,10 +149,12 @@ function t(path, vars={}){
 }
 async function applyI18n(){
   DICT = await loadLangDict(currentLang);
+  const phoneHuman = CFG.CONTACT?.PHONE_HUMAN || '';
+  const botUser = CFG.TELEGRAM?.BOT_USERNAME || '';
   $$('[data-i18n]').forEach(el=>{
     const key = el.getAttribute('data-i18n');
-    const vars = (key==='contact.call') ? {phone: CFG.CONTACT.PHONE_HUMAN}
-               : (key==='contact.tg')   ? {user: CFG.TELEGRAM.BOT_USERNAME}
+    const vars = (key==='contact.call') ? {phone: phoneHuman}
+               : (key==='contact.tg')   ? {user: botUser}
                : {};
     el.textContent = t(key, vars);
   });
@@ -33,10 +164,15 @@ async function applyI18n(){
   // typer phrases
   const typer = $('#typer'); if(typer){ const attr = currentLang==='en' ? 'data-phrases-en' : 'data-phrases-tr'; typer.setAttribute('data-phrases', typer.getAttribute(attr)); }
   // links
-  $('#btnWhats')?.setAttribute('href', `https://wa.me/${CFG.CONTACT.PHONE_E164.replace('+','')}?text=${encodeURIComponent(CFG.CONTACT.WHATS_TEXT)}`);
-  $('#btnCall')?.setAttribute('href', `tel:${CFG.CONTACT.PHONE_E164}`);
-  $('#btnTg')?.setAttribute('href', `https://t.me/${CFG.TELEGRAM.BOT_USERNAME}`);
-  $('#btnTgLogin')?.setAttribute('href', `https://t.me/${CFG.TELEGRAM.BOT_USERNAME}?start=login`);
+  const phoneE164 = CFG.CONTACT?.PHONE_E164 || '';
+  const whatsText = CFG.CONTACT?.WHATS_TEXT || '';
+  const whatsHref = phoneE164 ? `https://wa.me/${phoneE164.replace('+','')}?text=${encodeURIComponent(whatsText)}` : '#';
+  $('#btnWhats')?.setAttribute('href', whatsHref);
+  $('#btnCall')?.setAttribute('href', phoneE164 ? `tel:${phoneE164}` : '#');
+  $('#btnTg')?.setAttribute('href', botUser ? `https://t.me/${botUser}` : '#');
+  const mailHref = CFG.CONTACT?.EMAIL ? `mailto:${CFG.CONTACT.EMAIL}` : '#';
+  $('#btnMail')?.setAttribute('href', mailHref);
+  $('#btnTgLogin')?.setAttribute('href', botUser ? `https://t.me/${botUser}?start=login` : '#');
   // location
   if(CFG.SHOW_LOCATION){ $('#heroMeta')?.removeAttribute('hidden'); } else { $('#heroMeta')?.setAttribute('hidden',''); }
 }
@@ -63,6 +199,9 @@ async function applyI18n(){
 // language switch
 (async function initI18n(){
   await applyI18n();
+  renderSkills();
+  renderExperience();
+  renderProjects(getActiveProjectFilter());
   const langSelect = $('#langSelect');
   if(langSelect){
     langSelect.value = currentLang;
@@ -70,7 +209,7 @@ async function applyI18n(){
       currentLang = langSelect.value;
       localStorage.setItem('lang', currentLang);
       await applyI18n();
-      renderSkills(); renderExperience(); renderProjects();
+      renderSkills(); renderExperience(); renderProjects(getActiveProjectFilter());
     });
   }
 })();
@@ -104,7 +243,6 @@ function renderSkills(){
     grid.appendChild(d);
   });
 }
-renderSkills();
 
 // experience
 const EXPERIENCE = [
@@ -134,7 +272,6 @@ function renderExperience(){
     list.appendChild(el);
   });
 }
-renderExperience();
 
 // projects
 const PROJECTS = {
@@ -160,7 +297,6 @@ function renderProjects(filter='all'){
     grid.appendChild(c);
   });
 }
-renderProjects();
 $$('.chip').forEach(chip=>{
   chip.addEventListener('click', ()=>{
     $$('.chip').forEach(c=>c.classList.remove('is-active'));
@@ -170,23 +306,39 @@ $$('.chip').forEach(chip=>{
 });
 
 // SMS (optional)
-if(CFG.SHOW_SMS){
+if(CFG.SHOW_SMS && CFG.CONTACT?.PHONE_E164){
   const smsBtn=document.createElement('a');
   smsBtn.className='btn contact-btn sms';
-  smsBtn.href=`sms:${CFG.CONTACT.PHONE_E164}?body=${encodeURIComponent(CFG.CONTACT.WHATS_TEXT)}`;
+  const smsText = encodeURIComponent(CFG.CONTACT?.WHATS_TEXT || '');
+  smsBtn.href=`sms:${CFG.CONTACT.PHONE_E164}?body=${smsText}`;
   smsBtn.textContent = currentLang==='en' ? 'Send SMS' : 'SMS Gönder';
   $('#contactButtons')?.appendChild(smsBtn);
 }
 
 // Telegram only
 async function sendTelegramMessage(text){
-  const api=`https://api.telegram.org/bot${CFG.TELEGRAM.BOT_TOKEN}/sendMessage`;
-  const res = await fetch(api,{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ chat_id: CFG.TELEGRAM.CHAT_ID, text }) });
-  return res.ok ? {ok:true} : {ok:false, error:'Telegram error'};
+  const botToken = CFG.TELEGRAM?.BOT_TOKEN;
+  const chatId = CFG.TELEGRAM?.CHAT_ID;
+  if(!botToken || !chatId){
+    console.warn('Telegram configuration missing token or chat ID');
+    return { ok:false, error:'Telegram error' };
+  }
+  const api=`https://api.telegram.org/bot${botToken}/sendMessage`;
+  try{
+    const res = await fetch(api,{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ chat_id: chatId, text }) });
+    return res.ok ? {ok:true} : {ok:false, error:'Telegram error'};
+  }catch(err){
+    console.warn('Telegram request failed', err);
+    return {ok:false, error:'Telegram error'};
+  }
 }
-function genPayload(prefix='req'){ return `${CFG.TELEGRAM.START_PAYLOAD_PREFIX}${prefix}_${Math.random().toString(36).slice(2,10)}`; }
+function genPayload(prefix='req'){
+  const startPrefix = CFG.TELEGRAM?.START_PAYLOAD_PREFIX || '';
+  return `${startPrefix}${prefix}_${Math.random().toString(36).slice(2,10)}`;
+}
 function approvalLinks(payload){
-  const base=`https://t.me/${CFG.TELEGRAM.BOT_USERNAME}`;
+  const botUser = CFG.TELEGRAM?.BOT_USERNAME || '';
+  const base = botUser ? `https://t.me/${botUser}` : 'https://t.me/';
   return { open:`${base}?start=${payload}`, approve:`${base}?start=approve_${payload}`, reject:`${base}?start=reject_${payload}` };
 }
 $('#contactForm')?.addEventListener('submit', async (e)=>{

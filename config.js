@@ -15,6 +15,7 @@ window.APP_CONFIG = {
   CONTACT: {
     PHONE_E164: '+905550051800',
     PHONE_HUMAN: '+90 555 005 18 00',
-    WHATS_TEXT: 'Hello Mustafa, writing from your portfolio website.'
+    WHATS_TEXT: 'Hello Mustafa, writing from your portfolio website.',
+    EMAIL: 'mustafaferhatimamoglu@gmail.com'
   }
 };

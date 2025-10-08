@@ -20,7 +20,7 @@
     "edu2":"Erciyes Üniversitesi — Makine Mühendisliği (Lisans)"
   },
   "filters":{"all":"Tümü","software":"Yazılım","iot":"IoT / Gömülü","ai":"Görüntü İşleme / AI","automation":"Otomasyon/Test"},
-  "contact":{"whats":"WhatsApp Görüşme Başlat","call":"Ara: {phone}","tg":"Telegram: @{user}"},
+  "contact":{"whats":"WhatsApp Görüşme Başlat","call":"Ara: {phone}","tg":"Telegram: @{user}","mail":"E-posta Gönder"},
   "form":{"title":"İletişim Formu","name":"Ad Soyad","company":"Firma","email":"E-posta","phone":"Telefon","msg":"Mesaj","send":"Gönder"},
   "auth":{"login":"Giriş Yap","title":"Müşteri Portalı","desc":"Telegram üzerinden giriş ve onay akışı.","signup":"Yeni Müşteri Ol","cancel":"Kapat"},
   "signup":{

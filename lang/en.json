@@ -20,7 +20,7 @@
     "edu2":"Erciyes University — Mechanical Engineering (BSc)"
   },
   "filters":{"all":"All","software":"Software","iot":"IoT / Embedded","ai":"Computer Vision / AI","automation":"Automation/Testing"},
-  "contact":{"whats":"Start WhatsApp Chat","call":"Call: {phone}","tg":"Telegram: @{user}"},
+  "contact":{"whats":"Start WhatsApp Chat","call":"Call: {phone}","tg":"Telegram: @{user}","mail":"Send Email"},
   "form":{"title":"Contact Form","name":"Full Name","company":"Company","email":"Email","phone":"Phone","msg":"Message","send":"Send"},
   "auth":{"login":"Log In","title":"Client Portal","desc":"Sign-in and approvals are handled via Telegram.","signup":"Become a Client","cancel":"Close"},
   "signup":{
