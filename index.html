@@ -13,13 +13,22 @@
   <header class="site-header">
     <div class="header-wrap">
       <a class="brand" href="#hero">MFİ</a>
-      <nav class="nav">
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <!-- hamburger -->
+        <svg class="icon-open" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
+        <!-- close -->
+        <svg class="icon-close" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.3 5.71 12 12.01l-6.3-6.3-1.41 1.41 6.29 6.3-6.3 6.29 1.42 1.42 6.3-6.3 6.29 6.3 1.41-1.42-6.3-6.29 6.3-6.3Z"/></svg>
+      </button>
+
+      <nav id="mainNav" class="nav">
         <a href="#about">Hakkımda</a>
         <a href="#skills">Yetenekler</a>
         <a href="#experience">Deneyim</a>
         <a href="#projects">Projeler</a>
         <a href="#contact">İletişim</a>
       </nav>
+
       <button id="themeToggle" class="theme-toggle" aria-label="Tema değiştir">☀️</button>
     </div>
   </header>
@@ -35,7 +44,7 @@
         </h1>
         <p class="hero__lead">
           <strong id="typer"
-                  data-phrases='["Yazılım mühendisiyim.","Makine & elektronik konularına hâkimim.","Kurumsal yazılım ve IoT projeleri geliştiriyorum.","Görüntü işleme ve entegrasyona odaklanıyorum."]'>
+                  data-phrases='[" Yazılım mühendisiyim."," Makine & Elektronik konularına hâkimim."," Kurumsal yazılım ve IoT projeleri geliştiriyorum."," Görüntü işleme ve entegrasyona odaklanıyorum."]'>
           </strong>
         </p>
         <div class="hero__ctas">
@@ -77,6 +86,7 @@
         <div>
           <h3>Eğitim</h3>
           <p><strong>Erciyes Üniversitesi</strong> — Bilgisayar Mühendisliği (Lisans)</p>
+          <p><strong>Erciyes Üniversitesi</strong> — Makine Mühendisliği (Lisans)</p>
         </div>
       </div>
     </section>
@@ -116,8 +126,7 @@
            href="https://wa.me/905550051800?text=Merhaba%20Mustafa%2C%20portf%C3%B6y%20sitenden%20yaz%C4%B1yorum."
            target="_blank" rel="noopener">
           <span class="ico" aria-hidden="true">
-            <!-- WhatsApp SVG -->
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0C5.6 0 .36 5.24.36 11.7c0 2.06.54 4.06 1.58 5.84L0 24l6.65-1.92a11.66 11.66 0 0 0 5.41 1.37h.01c6.46 0 11.71-5.24 11.71-11.7 0-3.13-1.22-6.07-3.26-8.11ZM12.07 21.3h-.01c-1.73 0-3.43-.47-4.91-1.35l-.35-.2-3.95 1.14 1.15-3.86-.23-.4a9.85 9.85 0 0 1-1.46-5.13c0-5.43 4.43-9.85 9.87-9.85 2.63 0 5.1 1.02 6.96 2.88a9.8 9.8 0 0 1 2.9 6.96c0 5.43-4.43 9.85-9.97 9.85Zm5.75-7.37c-.31-.16-1.83-.9-2.11-1.01-.28-.1-.49-.15-.7.16-.2.31-.8 1.01-.98 1.22-.18.2-.36.23-.66.08-1.8-.9-2.98-1.61-4.17-3.64-.31-.54.31-.5.9-1.66.1-.21.05-.39-.03-.55-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.5-.7-.5h-.6c-.21 0-.55.08-.83.39-.28.31-1.08 1.06-1.08 2.6 0 1.53 1.1 3.01 1.25 3.22.16.2 2.15 3.27 5.22 4.6.73.32 1.3.51 1.75.65.73.23 1.39.2 1.92.12.59-.09 1.83-.75 2.09-1.49.26-.74.26-1.38.18-1.49-.08-.1-.28-.16-.59-.32Z"/></svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0C5.6 0 .36 5.24.36 11.7c0 2.06.54 4.06 1.58 5.84L0 24l6.65-1.92a11.66 11.66 0 0 0 5.41 1.37h.01c6.46 0 11.71-11.7 11.71-11.7 0-3.13-1.22-6.07-3.26-8.11Z"/></svg>
           </span>
           WhatsApp Görüşme Başlat
         </a>
@@ -125,25 +134,31 @@
         <!-- Telefon -->
         <a class="btn contact-btn call" href="tel:+905550051800">
           <span class="ico" aria-hidden="true">
-            <!-- Phone SVG -->
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.42 22 2 13.58 2 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg>
           </span>
           Ara: +90 555 005 18 00
         </a>
 
-        <!-- SMS -->
-        <a class="btn contact-btn sms" href="sms:+905550051800?body=Merhaba%20Mustafa%2C%20">
+        <!-- Telegram -->
+        <a class="btn contact-btn tg" target="_blank" rel="noopener"
+           href="https://t.me/mustafaferhatimamoglu">
           <span class="ico" aria-hidden="true">
-            <!-- SMS bubble -->
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M9.04 15.22 8.9 19c.4 0 .58-.16.8-.35l1.93-1.75 4 .29c.73 0 1.24-.3 1.42-1.01l2.57-10.01c.26-1.01-.37-1.49-1.07-1.23L3.98 9.56c-.99.38-.98.93-.17 1.18l4.39 1.37 10.2-6.42c.48-.3.92-.14.56.16l-8.92 7.37Z"/></svg>
+          </span>
+          Telegram: @mustafaferhatimamoglu
+        </a>
+
+        <!-- SMS (pasif) -->
+        <a class="btn contact-btn sms is-disabled" aria-disabled="true" tabindex="-1" href="#">
+          <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/></svg>
           </span>
-          SMS Gönder
+          SMS (pasif)
         </a>
 
         <!-- E-posta -->
         <a class="btn contact-btn mail" href="mailto:mustafaferhatimamoglu@gmail.com?subject=İş%20birliği&body=Merhaba%20Mustafa%2C%20">
           <span class="ico" aria-hidden="true">
-            <!-- Mail -->
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 6a2 2 0 0 0-2-2H4C2.9 4 2 4.9 2 6v12a2 2 0 0 0 2 2h16c1.1 0 2-.9 2-2V6Zm-2 0-8 5L4 6h16Zm0 12H4V8l8 5 8-5v10Z"/></svg>
           </span>
           E-posta
@@ -152,7 +167,6 @@
         <!-- LinkedIn -->
         <a class="btn contact-btn li" target="_blank" rel="noopener" href="https://www.linkedin.com/in/mustafaferhatimamoglu/">
           <span class="ico" aria-hidden="true">
-            <!-- LinkedIn -->
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4V8.5ZM8.5 8.5h3.83v1.98h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.45c0-1.54-.03-3.52-2.15-3.52-2.15 0-2.48 1.68-2.48 3.4V23h-4V8.5Z"/></svg>
           </span>
           LinkedIn
@@ -161,14 +175,11 @@
         <!-- GitHub -->
         <a class="btn contact-btn gh" target="_blank" rel="noopener" href="https://github.com/mustafaferhatimamoglu">
           <span class="ico" aria-hidden="true">
-            <!-- GitHub -->
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58V20.9c-3.34.73-4.04-1.6-4.04-1.6-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.22.08 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.25-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.02-.33 3.34 1.23a11.6 11.6 0 0 1 6.08 0c2.3-1.56 3.33-1.23 3.33-1.23.66 1.65.25 2.87.12 3.17.78.84 1.25 1.9 1.25 3.22 0 4.6-2.8 5.62-5.47 5.92.43.37.81 1.11.81 2.24v3.32c0 .32.21.7.82.58A12 12 0 0 0 12 .5Z"/></svg>
           </span>
           GitHub
         </a>
       </div>
-
-      <p class="fineprint">WhatsApp ve arama bağlantıları mobilde doğrudan uygulamayı açar.</p>
     </section>
   </main>
 

@@ -11,14 +11,24 @@ themeToggle.addEventListener('click', () => {
 });
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// === Typewriter (yaz-sil) ===
+// === Hamburger Menü ===
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+if(menuToggle){
+  menuToggle.addEventListener('click', ()=>{
+    const open = mainNav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+}
+
+// === Typewriter (yaz-sil) — başta boşluk ve daha hızlı ===
 (function typewriter(){
   const el = document.getElementById('typer');
   const phrases = JSON.parse(el.dataset.phrases);
-  let i = 0, j = 0, deleting = false, pause = 1200;
+  let i = 0, j = 0, deleting = false, pause = 800;
 
   function tick(){
-    const current = phrases[i % phrases.length];
+    const current = phrases[i % phrases.length]; // başında bir boşluk zaten var
     if(!deleting){
       el.textContent = current.slice(0, ++j);
       if(j === current.length){ deleting = true; setTimeout(tick, pause); return; }
@@ -26,8 +36,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
       el.textContent = current.slice(0, --j);
       if(j === 0){ deleting = false; i++; }
     }
-    const base = deleting ? 40 : 65;
-    setTimeout(tick, base + Math.random()*80);
+    const base = deleting ? 28 : 40; // hız arttı
+    setTimeout(tick, base + Math.random()*50);
   }
   tick();
 })();
@@ -56,12 +66,12 @@ skills.forEach(s=>{
   skillsGrid.appendChild(el);
 });
 
-// === Deneyim ===
+// === Deneyim === (yıl bilgileri olmadan)
 const experience = [
   {
     title: 'Bilgi İşlem Uzmanı',
     company: 'Şirikçioğlu Tekstil',
-    time: 'Mar 2025 — Devam',
+    time: '', // yıl bilgisi yok
     location: 'Kayseri',
     bullets: [
       'Sunucu, network, güvenlik (firewall) kurulumu ve yönetimi',
@@ -73,7 +83,7 @@ const experience = [
   {
     title:'Sistem Mühendisi',
     company:'Ayruz Endüstri',
-    time:'Şub 2023 — Ara 2024',
+    time:'',
     location:'Kayseri',
     bullets:[
       'Havacılık projelerinde tasarım, entegrasyon ve doğrulama',
@@ -84,7 +94,7 @@ const experience = [
   {
     title:'Sistem Mühendisi',
     company:'Zirve Bilişim',
-    time:'Haz 2021 — Şub 2023',
+    time:'',
     location:'Kayseri',
     bullets:[
       'BT altyapısı: güvenlik duvarı, sanallaştırma, NAS/yedekleme',
@@ -95,7 +105,7 @@ const experience = [
   {
     title:'Yazılım Mühendisi',
     company:'Sedaş Bilgisayar',
-    time:'Ara 2019 — Haz 2021',
+    time:'',
     location:'',
     bullets:[
       'Netsis/Logo B2B2C-ERP entegrasyonları',
@@ -108,9 +118,10 @@ const experienceList = document.getElementById('experienceList');
 experience.forEach(j=>{
   const el = document.createElement('div');
   el.className = 'job';
+  const metaLine = (j.time || j.location) ? `<div class="meta">${[j.time, j.location].filter(Boolean).join(' • ')}</div>` : '';
   el.innerHTML = `
     <h4>${j.title} — ${j.company}</h4>
-    <div class="meta">${j.time}${j.location ? ' • ' + j.location : ''}</div>
+    ${metaLine}
     <ul>${j.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
   experienceList.appendChild(el);
 });
@@ -163,7 +174,6 @@ const projects = [
     links:[]
   },
 ];
-
 const projectsGrid = document.getElementById('projectsGrid');
 function renderProjects(filter='all'){
   projectsGrid.innerHTML = '';
@@ -191,7 +201,9 @@ document.querySelectorAll('.chip').forEach(chip=>{
   });
 });
 
-// === CV indir ===
-const cvUrl = 'KariyerCV-A1FEDD2D-C64E-4094-BF9F-E0F35828EA4D.pdf';
+// === CV indir (opsiyonel; sayfada yoksa dokunma) ===
 const downloadBtn = document.getElementById('downloadCV');
-if(downloadBtn) downloadBtn.setAttribute('href', cvUrl);
+if(downloadBtn){
+  const cvUrl = 'KariyerCV-A1FEDD2D-C64E-4094-BF9F-E0F35828EA4D.pdf';
+  downloadBtn.setAttribute('href', cvUrl);
+}
