@@ -80,7 +80,7 @@ a{color:var(--accent); text-decoration:none}
 .contact-btn.call{background:var(--call); color:#00160a}
 .contact-btn.sms{background:var(--sms); color:#001018}
 .contact-btn.tg{background:var(--tg); color:#001018}
-.contact-btn.mail{background:var(--mail)}
+.contact-btn.mail{background:var(--mail); color:#fff}
 .contact-btn.li{background:var(--li)}
 .contact-btn.gh{background:var(--gh); color:#fff}
 .contact-btn:hover{filter:saturate(1.2) brightness(1.05)}
