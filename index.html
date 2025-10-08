@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mustafa Ferhat İmamoğlu — Yazılım Mühendisi</title>
+  <meta name="description" content="Yazılım mühendisi; makine ve elektronik alanlarında da uzman. Kurumsal yazılım, IoT/ESP32, görüntü işleme, entegrasyon." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#hero">MFİ</a>
+    <nav class="nav">
+      <a href="#about">Hakkımda</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#experience">Deneyim</a>
+      <a href="#projects">Projeler</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+    <button id="themeToggle" class="theme-toggle" aria-label="Tema değiştir">☀️</button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero container">
+      <div class="hero__text">
+        <h1>Merhaba, ben <span class="accent">Mustafa Ferhat İmamoğlu</span>.</h1>
+        <p class="hero__lead">
+          <strong>Yazılım mühendisi</strong>yim; aynı zamanda <strong>makine</strong> ve <strong>elektronik</strong> konularında derin saha tecrübesine sahibim.
+          Kurumsal yazılımlar, <strong>IoT/ESP32</strong>, görüntü işleme ve entegrasyon projeleri geliştiriyorum.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn primary" href="#projects">Projelerimi Gör</a>
+          <a class="btn" href="#contact">İletişime Geç</a>
+        </div>
+        <div class="hero__meta">
+          <span>📍 Kayseri / Kocasinan</span>
+          <span>🧑‍💻 8+ yıl deneyim</span>
+        </div>
+      </div>
+      <div class="hero__card" id="heroCard">
+        <div class="hero__badge">Yazılım • Makine • Elektronik</div>
+        <ul class="hero__bullets">
+          <li>C#/.NET, MSSQL, DevExpress</li>
+          <li>ESP32, IoT, gömülü sistemler</li>
+          <li>Görüntü işleme &amp; AI</li>
+          <li>ERP/B2B2C entegrasyonları</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HAKKIMDA -->
+    <section id="about" class="container section">
+      <h2>Hakkımda</h2>
+      <p id="aboutText">
+        Yazılım geliştirme ve bilişim sistemleri alanında 8+ yıllık deneyimle; üretim, sağlık, savunma ve perakende gibi sektörlerde
+        <strong>kurumsal yazılımlar</strong>, <strong>otomasyon</strong> ve <strong>IoT</strong> çözümleri geliştirdim.
+        Disiplinler arası bakış açısıyla, yazılımı donanım ve mekanikle birleştirerek uçtan uca sistemler kuruyorum.
+      </p>
+      <div class="about__grid">
+        <div>
+          <h3>Odak Alanlarım</h3>
+          <ul class="tags">
+            <li>Kurumsal Uygulamalar</li><li>IoT & ESP32</li><li>Görüntü İşleme/AI</li>
+            <li>ERP/CRM Entegrasyon</li><li>Test &amp; Doğrulama</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Eğitim</h3>
+          <p><strong>Erciyes Üniversitesi</strong> — Bilgisayar Mühendisliği (Lisans)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- YETENEKLER -->
+    <section id="skills" class="container section">
+      <h2>Yetenekler</h2>
+      <div id="skillsGrid" class="skills-grid"></div>
+    </section>
+
+    <!-- DENEYİM -->
+    <section id="experience" class="container section">
+      <h2>Deneyim</h2>
+      <div id="experienceList" class="timeline"></div>
+    </section>
+
+    <!-- PROJELER -->
+    <section id="projects" class="container section">
+      <h2>Projeler</h2>
+      <div class="filters">
+        <button class="chip is-active" data-filter="all">Tümü</button>
+        <button class="chip" data-filter="software">Yazılım</button>
+        <button class="chip" data-filter="iot">IoT / Gömülü</button>
+        <button class="chip" data-filter="ai">Görüntü İşleme / AI</button>
+        <button class="chip" data-filter="automation">Otomasyon/Test</button>
+      </div>
+      <div id="projectsGrid" class="cards"></div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="contact" class="container section">
+      <h2>İletişim</h2>
+      <div class="contact">
+        <a class="btn" target="_blank" rel="noopener" href="mailto:mustafaferhatimamoglu@gmail.com">E-posta</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/mustafaferhatimamoglu/">LinkedIn</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://github.com/mustafaferhatimamoglu">GitHub</a>
+        <a class="btn outline" id="downloadCV" href="#" download>CV İndir (PDF)</a>
+      </div>
+      <p class="fineprint">Projeler ve içerikler düzenli olarak güncellenmektedir.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Mustafa Ferhat İmamoğlu</span>
+    <span>Kaynak: Özgeçmiş • içerik entegrasyonu</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
