@@ -11,9 +11,26 @@ themeToggle.addEventListener('click', () => {
 });
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// === Hakkımda kısa metin (gerekirse güncelle) ===
-// İçerik CV'den derlendi.
+// === Typewriter (yaz-sil) ===
+(function typewriter(){
+  const el = document.getElementById('typer');
+  const phrases = JSON.parse(el.dataset.phrases);
+  let i = 0, j = 0, deleting = false, pause = 1200;
 
+  function tick(){
+    const current = phrases[i % phrases.length];
+    if(!deleting){
+      el.textContent = current.slice(0, ++j);
+      if(j === current.length){ deleting = true; setTimeout(tick, pause); return; }
+    } else {
+      el.textContent = current.slice(0, --j);
+      if(j === 0){ deleting = false; i++; }
+    }
+    const base = deleting ? 40 : 65;
+    setTimeout(tick, base + Math.random()*80);
+  }
+  tick();
+})();
 
 // === Yetenekler ===
 const skills = [
@@ -39,7 +56,7 @@ skills.forEach(s=>{
   skillsGrid.appendChild(el);
 });
 
-// === Deneyim === (CV kaynaklı)
+// === Deneyim ===
 const experience = [
   {
     title: 'Bilgi İşlem Uzmanı',
@@ -166,8 +183,6 @@ function renderProjects(filter='all'){
     });
 }
 renderProjects();
-
-// Filtreler
 document.querySelectorAll('.chip').forEach(chip=>{
   chip.addEventListener('click', ()=>{
     document.querySelectorAll('.chip').forEach(c=>c.classList.remove('is-active'));
@@ -176,7 +191,7 @@ document.querySelectorAll('.chip').forEach(chip=>{
   });
 });
 
-// === CV indirme (yerine kendi PDF'ini koy) ===
-const cvUrl = 'KariyerCV-A1FEDD2D-C64E-4094-BF9F-E0F35828EA4D.pdf'; // repo köküne ekle
+// === CV indir ===
+const cvUrl = 'KariyerCV-A1FEDD2D-C64E-4094-BF9F-E0F35828EA4D.pdf';
 const downloadBtn = document.getElementById('downloadCV');
-downloadBtn.setAttribute('href', cvUrl);
+if(downloadBtn) downloadBtn.setAttribute('href', cvUrl);
