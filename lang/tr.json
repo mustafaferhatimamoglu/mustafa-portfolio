@@ -1,0 +1,32 @@
+{
+  "nav": {"about":"Hakkımda","skills":"Yetenekler","experience":"Deneyim","projects":"Projeler","contact":"İletişim"},
+  "hero": {
+    "hello":"Merhaba,",
+    "iAm":"ben",
+    "badge":"Yazılım • Makine • Elektronik",
+    "cvAi":"Görüntü işleme & AI",
+    "erp":"ERP/B2B2C Entegrasyon",
+    "viewProjects":"Projelerimi Gör",
+    "contactMe":"İletişime Geç",
+    "years":"🧑‍💻 8+ yıl deneyim"
+  },
+  "sections":{"about":"Hakkımda","skills":"Yetenekler","experience":"Deneyim","projects":"Projeler","contact":"İletişim"},
+  "about":{
+    "text":"Yazılım, makine ve elektronik disiplinlerini birleştiren uçtan uca çözümler geliştiriyorum.",
+    "focus":"Odak Alanlarım",
+    "tags":["Kurumsal Uygulamalar","IoT & ESP32","Görüntü İşleme / AI","ERP/CRM Entegrasyon","Doğrulama & Test"],
+    "edu":"Eğitim",
+    "edu1":"Erciyes Üniversitesi — Bilgisayar Mühendisliği (Lisans)",
+    "edu2":"Erciyes Üniversitesi — Makine Mühendisliği (Lisans)"
+  },
+  "filters":{"all":"Tümü","software":"Yazılım","iot":"IoT / Gömülü","ai":"Görüntü İşleme / AI","automation":"Otomasyon/Test"},
+  "contact":{"whats":"WhatsApp Görüşme Başlat","call":"Ara: {phone}","tg":"Telegram: @{user}"},
+  "form":{"title":"İletişim Formu","name":"Ad Soyad","company":"Firma","email":"E-posta","phone":"Telefon","msg":"Mesaj","send":"Gönder"},
+  "auth":{"login":"Giriş Yap","title":"Müşteri Portalı","desc":"Telegram üzerinden giriş ve onay akışı.","signup":"Yeni Müşteri Ol","cancel":"Kapat"},
+  "signup":{
+    "title":"Yeni Müşteri — Bilgi Formu","fullname":"Ad Soyad","company":"Firma","email":"E-posta","phone":"Telefon",
+    "taxoffice":"Vergi Dairesi","taxno":"Vergi No / TCKN","address":"Fatura Adresi","send":"Gönder",
+    "note":"Gönderimden sonra Telegram üzerinden iki aşamalı onay alınır."
+  },
+  "ui":{"sending":"Gönderiliyor…","sent":"Gönderildi ✅","error":"Hata"}
+}

@@ -1,0 +1,32 @@
+{
+  "nav": {"about":"About","skills":"Skills","experience":"Experience","projects":"Projects","contact":"Contact"},
+  "hero": {
+    "hello":"Hello,",
+    "iAm":"I am",
+    "badge":"Software • Mechanical • Electronics",
+    "cvAi":"Computer Vision & AI",
+    "erp":"ERP/B2B2C Integrations",
+    "viewProjects":"View Projects",
+    "contactMe":"Contact Me",
+    "years":"🧑‍💻 8+ years experience"
+  },
+  "sections":{"about":"About","skills":"Skills","experience":"Experience","projects":"Projects","contact":"Contact"},
+  "about":{
+    "text":"I build end-to-end solutions that fuse software with mechanical and electronics disciplines.",
+    "focus":"Focus Areas",
+    "tags":["Corporate Applications","IoT & Embedded Systems","Computer Vision / AI","ERP/CRM Integration","Integration & Validation"],
+    "edu":"Education",
+    "edu1":"Erciyes University — Computer Engineering (BSc)",
+    "edu2":"Erciyes University — Mechanical Engineering (BSc)"
+  },
+  "filters":{"all":"All","software":"Software","iot":"IoT / Embedded","ai":"Computer Vision / AI","automation":"Automation/Testing"},
+  "contact":{"whats":"Start WhatsApp Chat","call":"Call: {phone}","tg":"Telegram: @{user}"},
+  "form":{"title":"Contact Form","name":"Full Name","company":"Company","email":"Email","phone":"Phone","msg":"Message","send":"Send"},
+  "auth":{"login":"Log In","title":"Client Portal","desc":"Sign-in and approvals are handled via Telegram.","signup":"Become a Client","cancel":"Close"},
+  "signup":{
+    "title":"New Client — Information","fullname":"Full Name","company":"Company","email":"Email","phone":"Phone",
+    "taxoffice":"Tax Office","taxno":"Tax No / National ID","address":"Billing Address","send":"Send",
+    "note":"A two-step approval is required via Telegram after submission."
+  },
+  "ui":{"sending":"Sending…","sent":"Sent ✅","error":"Error"}
+}
