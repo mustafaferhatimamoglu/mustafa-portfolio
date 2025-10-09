@@ -197,30 +197,22 @@ async function applyI18n(){
 })();
 
 // language switch
-(async function initI18n(){
-  await applyI18n();
-  renderSkills();
-  renderExperience();
-  renderProjects(getActiveProjectFilter());
-  const langSelect = $('#langSelect');
-  if(langSelect){
-    langSelect.value = currentLang;
-    langSelect.addEventListener('change', async ()=>{
-      currentLang = langSelect.value;
-      localStorage.setItem('lang', currentLang);
-      await applyI18n();
-      renderSkills(); renderExperience(); renderProjects(getActiveProjectFilter());
-    });
-  }
-})();
-
 // typewriter
 (function typewriter(){
   const el = $('#typer'); if(!el) return;
-  const phrases = ()=> JSON.parse(el.getAttribute('data-phrases'));
+  const phrases = ()=>{
+    const base = el.getAttribute('data-phrases');
+    if(base){ try { return JSON.parse(base); } catch(err){} }
+    const fallbackAttr = currentLang==='en' ? el.getAttribute('data-phrases-en')
+                        : el.getAttribute('data-phrases-tr');
+    if(fallbackAttr){ try { return JSON.parse(fallbackAttr); } catch(err){} }
+    return [];
+  };
   let i=0,j=0,deleting=false,pause=800;
   function tick(){
-    const cur = phrases()[i % phrases().length];
+    const list = phrases();
+    if(!list.length){ return setTimeout(tick, 400); }
+    const cur = list[i % list.length];
     if(!deleting){ el.textContent = cur.slice(0, ++j); if(j===cur.length){ deleting=true; return void setTimeout(tick, pause);} }
     else { el.textContent = cur.slice(0, --j); if(j===0){ deleting=false; i++; } }
     setTimeout(tick, (deleting?28:40) + Math.random()*50);
@@ -454,6 +446,27 @@ function renderProjects(filter='all'){
     grid.appendChild(c);
   });
 }
+
+async function initI18n(){
+  await applyI18n();
+  renderSkills();
+  renderExperience();
+  renderProjects(getActiveProjectFilter());
+  const langSelect = $('#langSelect');
+  if(langSelect){
+    langSelect.value = currentLang;
+    langSelect.addEventListener('change', async ()=>{
+      currentLang = langSelect.value;
+      localStorage.setItem('lang', currentLang);
+      await applyI18n();
+      renderSkills();
+      renderExperience();
+      renderProjects(getActiveProjectFilter());
+    });
+  }
+}
+
+initI18n();
 // SMS (optional)
 if(CFG.SHOW_SMS && CFG.CONTACT?.PHONE_E164){
   const smsBtn=document.createElement('a');
