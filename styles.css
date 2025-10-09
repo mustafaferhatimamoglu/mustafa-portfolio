@@ -52,12 +52,14 @@ a{color:var(--accent); text-decoration:none}
 .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
 .skill{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px}
 .skill h4{margin:0 0 6px 0}
+.skill p{margin:8px 0 0 0; font-size:.9rem; color:var(--muted)}
 .meter{height:8px; background:var(--border); border-radius:999px; overflow:hidden}
 .meter > i{display:block; height:100%; background:linear-gradient(90deg,var(--accent),var(--accent-2))}
 .timeline{display:grid; gap:14px}
 .job{border:1px solid var(--border); background:var(--card); border-radius:14px; padding:14px}
 .job h4{margin:0 0 4px 0}
 .job .meta{color:var(--muted); font-size:.95rem; margin-bottom:8px}
+.job .summary{margin:0 0 8px 0; color:var(--muted)}
 .job ul{margin:0; padding-left:18px}
 
 /* Projects */
@@ -70,6 +72,7 @@ a{color:var(--accent); text-decoration:none}
 .card .badges{display:flex; flex-wrap:wrap; gap:6px}
 .badge{font-size:.8rem; color:var(--muted); border:1px dashed var(--border); padding:3px 8px; border-radius:999px}
 .card .desc{color:var(--muted)}
+.card .impact{color:var(--fg); font-weight:600; font-size:.95rem}
 .card .links{display:flex; gap:8px; margin-top:auto}
 
 /* Contact */
@@ -80,7 +83,7 @@ a{color:var(--accent); text-decoration:none}
 .contact-btn.call{background:var(--call); color:#00160a}
 .contact-btn.sms{background:var(--sms); color:#001018}
 .contact-btn.tg{background:var(--tg); color:#001018}
-.contact-btn.mail{background:var(--mail)}
+.contact-btn.mail{background:var(--mail); color:#fff}
 .contact-btn.li{background:var(--li)}
 .contact-btn.gh{background:var(--gh); color:#fff}
 .contact-btn:hover{filter:saturate(1.2) brightness(1.05)}
