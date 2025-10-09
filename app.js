@@ -200,19 +200,26 @@ async function applyI18n(){
 // typewriter
 (function typewriter(){
   const el = $('#typer'); if(!el) return;
-  const phrases = ()=>{
-    const base = el.getAttribute('data-phrases');
-    if(base){ try { return JSON.parse(base); } catch(err){} }
-    const fallbackAttr = currentLang==='en' ? el.getAttribute('data-phrases-en')
-                        : el.getAttribute('data-phrases-tr');
-    if(fallbackAttr){ try { return JSON.parse(fallbackAttr); } catch(err){} }
-    return [];
+  const pickFallbackAttr = ()=> el.getAttribute('data-phrases')
+    || el.getAttribute(currentLang==='en' ? 'data-phrases-en' : 'data-phrases-tr')
+    || el.getAttribute('data-phrases-tr')
+    || el.getAttribute('data-phrases-en');
+  const readPhrases = ()=>{
+    const raw = pickFallbackAttr();
+    if(!raw) return [];
+    try{ return JSON.parse(raw); }
+    catch(err){ console.warn('typewriter phrases parse failed', err); return []; }
   };
+  let phrases = readPhrases();
+  if(!phrases.length) return;
   let i=0,j=0,deleting=false,pause=800;
+  function refreshPhrases(){
+    const latest = readPhrases();
+    if(latest.length) phrases = latest;
+  }
   function tick(){
-    const list = phrases();
-    if(!list.length){ return setTimeout(tick, 400); }
-    const cur = list[i % list.length];
+    refreshPhrases();
+    const cur = phrases[i % phrases.length];
     if(!deleting){ el.textContent = cur.slice(0, ++j); if(j===cur.length){ deleting=true; return void setTimeout(tick, pause);} }
     else { el.textContent = cur.slice(0, --j); if(j===0){ deleting=false; i++; } }
     setTimeout(tick, (deleting?28:40) + Math.random()*50);
