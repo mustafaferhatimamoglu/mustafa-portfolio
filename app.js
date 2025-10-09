@@ -231,41 +231,42 @@ async function applyI18n(){
 // skills
 const SKILLS = {
   tr: [
-    { name: 'C# / .NET & WinForms', level: 96, desc: 'Kurumsal otomasyon, envanter, üretim ve raporlama uygulamaları.' },
-    { name: 'ASP.NET Core & REST API', level: 90, desc: 'B2B/B2C iş akışları, entegrasyon servisleri ve JWT kimlik doğrulama.' },
-    { name: 'MSSQL, T-SQL & ETL', level: 92, desc: 'Performans optimizasyonu, anlık raporlama ve veri ambarı replikasyonları.' },
-    { name: 'DevExpress & Raporlama', level: 88, desc: 'Rich UI, dashboard, parametrik rapor ve esnek grid çözümleri.' },
-    { name: 'Python & OpenCV', level: 82, desc: 'Hatalı ürün tespiti, kalite kontrol ve veri önişleme pipeline’ları.' },
-    { name: 'TensorFlow Lite / Edge AI', level: 78, desc: 'ESP32-CAM üstünde gerçek zamanlı sınıflandırma ve anomaly scoring.' },
-    { name: 'IoT — ESP32, MQTT, Modbus', level: 86, desc: 'Endüstriyel gateway, saha cihazı telemetrisi ve bulut haberleşmesi.' },
-    { name: 'C/C++ Gömülü', level: 80, desc: 'RTOS, sürücü geliştirme, sensör füzyonu ve düşük seviye protokoller.' },
-    { name: 'Linux, AD & Sanallaştırma', level: 84, desc: 'VM, yedekleme, güvenlik sertifikasyonları ve merkezi kimlik altyapısı.' },
-    { name: 'Test & Doğrulama Otomasyonu', level: 88, desc: 'DO-160/MIL-STD-810 test hücreleri, veri toplama ve raporlama.' },
-    { name: 'ERP & Entegrasyon', level: 90, desc: 'Logo, Netsis, Mikro ve 3. parti lojistik/paylaşım platformları.' },
-    { name: 'DevOps & Sürümleme', level: 76, desc: 'GitLab CI, otomatik dağıtım, sürümleme ve yapılandırma yönetimi.' }
+    'C# / .NET',
+    'MSSQL',
+    'DevExpress',
+    'Entity Framework',
+    'ASP.NET',
+    'JavaScript',
+    'Python / OpenCV',
+    'IoT / ESP32 / C/C++',
+    'Görüntü İşleme / AI',
+    'ERP / B2B2C Entegrasyon',
+    'Linux & AD & Sanallaştırma',
+    'Test & Doğrulama Otomasyonu'
   ],
   en: [
-    { name: 'C# / .NET & WinForms', level: 96, desc: 'Enterprise automation, inventory, manufacturing and reporting apps.' },
-    { name: 'ASP.NET Core & REST APIs', level: 90, desc: 'B2B/B2C workflows, integration services and JWT based auth.' },
-    { name: 'MSSQL, T-SQL & ETL', level: 92, desc: 'Performance tuning, real-time dashboards and warehouse replication.' },
-    { name: 'DevExpress & Reporting', level: 88, desc: 'Rich UI, dashboards, parameterized reports and flexible grids.' },
-    { name: 'Python & OpenCV', level: 82, desc: 'Defect detection, quality inspection and data pre-processing pipelines.' },
-    { name: 'TensorFlow Lite / Edge AI', level: 78, desc: 'On-device classification and anomaly scoring on ESP32-CAM.' },
-    { name: 'IoT — ESP32, MQTT, Modbus', level: 86, desc: 'Industrial gateways, field telemetry and cloud messaging.' },
-    { name: 'C/C++ Embedded', level: 80, desc: 'RTOS, driver development, sensor fusion and low-level protocols.' },
-    { name: 'Linux, AD & Virtualization', level: 84, desc: 'VM management, backup, security hardening and central identity.' },
-    { name: 'Test & Verification Automation', level: 88, desc: 'DO-160/MIL-STD-810 rigs, data acquisition and compliance reporting.' },
-    { name: 'ERP & Integrations', level: 90, desc: 'Logo, Netsis, Mikro plus 3rd-party logistics and marketplace platforms.' },
-    { name: 'DevOps & Release Engineering', level: 76, desc: 'GitLab CI, automated deployments and configuration management.' }
+    'C# / .NET',
+    'MSSQL',
+    'DevExpress',
+    'Entity Framework',
+    'ASP.NET',
+    'JavaScript',
+    'Python / OpenCV',
+    'IoT / ESP32 / C/C++',
+    'Computer Vision / AI',
+    'ERP / B2B2C Integration',
+    'Linux & AD & Virtualization',
+    'Test & Verification Automation'
   ]
 };
+const SKILL_LEVELS = [95, 90, 88, 87, 85, 80, 78, 83, 82, 86, 80, 84];
 function renderSkills(){
   const grid = $('#skillsGrid'); if(!grid) return;
   grid.innerHTML='';
-  (SKILLS[currentLang]||[]).forEach(skill=>{
+  (SKILLS[currentLang]||[]).forEach((name,idx)=>{
     const d=document.createElement('div'); d.className='skill';
-    const level = skill.level ?? 80;
-    d.innerHTML = `<h4>${skill.name}</h4><div class="meter"><i style="width:${level}%"></i></div>${skill.desc ? `<p>${skill.desc}</p>` : ''}`;
+    const level = SKILL_LEVELS[idx] ?? 80;
+    d.innerHTML = `<h4>${name}</h4><div class="meter"><i style="width:${level}%"></i></div>`;
     grid.appendChild(d);
   });
 }
@@ -273,100 +274,77 @@ function renderSkills(){
 // experience
 const EXPERIENCE = [
   {
-    title_tr:'Kıdemli Yazılım ve Sistem Mühendisi',
-    title_en:'Senior Software & Systems Engineer',
-    company:'Freelance / Danışman',
-    time:'2021 — Günümüz',
-    location:'Kayseri',
-    summary_tr:'Endüstriyel üretim, otomasyon ve görüntü işleme projelerinde danışmanlık.',
-    summary_en:'Consulting on industrial manufacturing, automation and computer vision projects.',
-    bullets_tr:[
-      'ERP, saha cihazları ve bulut servisleri arasında entegrasyon köprüleri.',
-      'ESP32 tabanlı veri toplama, edge AI ve durum izleme çözümleri.',
-      'Makine parkurlarında test otomasyonu ve raporlama altyapıları.'
+    title_tr: 'Bilgi İşlem Uzmanı',
+    title_en: 'IT Specialist',
+    company: 'Şirikçioğlu Tekstil',
+    time_tr: 'Mar 2025 — Devam',
+    time_en: 'Mar 2025 — Present',
+    location: 'Kayseri',
+    bullets_tr: [
+      'Sunucu, network, güvenlik (firewall) kurulumu ve yönetimi.',
+      'C# WinForms + MSSQL ile iç yazılımlar (arıza takibi, fazla mesai, sendika).',
+      'Active Directory, sanallaştırma, yedekleme süreçleri.',
+      'IP CCTV sistem entegrasyonu; üretim kalite için görüntü işleme.'
     ],
-    bullets_en:[
-      'Integration bridges between ERP, field devices and cloud services.',
-      'ESP32-based data acquisition, edge AI and condition monitoring solutions.',
-      'Test automation and reporting frameworks for production lines.'
+    bullets_en: [
+      'Deploying and administering servers, networking and firewall security.',
+      'C# WinForms + MSSQL internal apps (fault tracking, overtime, union workflows).',
+      'Active Directory, virtualization and backup operations.',
+      'IP CCTV integration with computer vision for production quality.'
     ]
   },
   {
-    title_tr:'Bilgi İşlem Uzmanı',
-    title_en:'IT Specialist',
-    company:'Şirikçioğlu Tekstil',
-    time:'2017 — 2021',
-    location:'Kahramanmaraş',
-    summary_tr:'Tekstil üretim tesisleri için uçtan uca IT ve yazılım süreçlerinin yönetimi.',
-    summary_en:'Managed end-to-end IT and software operations for textile manufacturing plants.',
-    bullets_tr:[
-      'Sunucu, network ve güvenlik mimarisinin planlanması ve bakımı.',
-      'C# WinForms + MSSQL iç yazılımlar ile depo, kalite ve sevkiyat süreçleri.',
-      'AD, sanallaştırma, yedekleme ve felaket kurtarma altyapıları.',
-      'IP CCTV ve kalite kontrol için görüntü işleme uygulamaları.'
+    title_tr: 'Sistem Mühendisi',
+    title_en: 'Systems Engineer',
+    company: 'Ayruz Endüstri',
+    time_tr: 'Şub 2023 — Ara 2024',
+    time_en: 'Feb 2023 — Dec 2024',
+    location: 'Kayseri',
+    bullets_tr: [
+      'Havacılık projelerinde tasarım, entegrasyon ve doğrulama.',
+      'DO-178/DO-254, MIL-STD-810G/DO-160 test planlama ve uygulama.',
+      'Helikopter vinç yazılımı, yakıt probu, test ekipmanları.'
     ],
-    bullets_en:[
-      'Planned and maintained server, network and security architectures.',
-      'Built WinForms + MSSQL tooling for warehouse, quality and logistics flows.',
-      'Handled AD, virtualization, backup and disaster recovery platforms.',
-      'Delivered IP CCTV and computer vision tooling for quality inspection.'
+    bullets_en: [
+      'Design, integration and verification across aerospace programmes.',
+      'Planned and executed DO-178/DO-254, MIL-STD-810G/DO-160 campaigns.',
+      'Helicopter hoist software, fuel probe and test equipment delivery.'
     ]
   },
   {
-    title_tr:'Sistem Mühendisi',
-    title_en:'Systems Engineer',
-    company:'Ayruz Endüstri',
-    time:'2014 — 2017',
-    location:'Kayseri',
-    summary_tr:'Havacılık ve savunma projelerinde gömülü sistem tasarım ve doğrulama.',
-    summary_en:'Embedded design and verification across aerospace and defence programs.',
-    bullets_tr:[
-      'Helikopter vinç, yakıt probu ve test ekipmanları için donanım/yazılım entegrasyonu.',
-      'DO-178C, DO-254 ve MIL-STD-810G uyumluluk testlerinin yürütülmesi.',
-      'Ömür testi, çevresel test ve saha doğrulama süreçlerinin otomasyonu.'
+    title_tr: 'Sistem Mühendisi',
+    title_en: 'Systems Engineer',
+    company: 'Zirve Bilişim',
+    time_tr: 'Haz 2021 — Şub 2023',
+    time_en: 'Jun 2021 — Feb 2023',
+    location: 'Kayseri',
+    bullets_tr: [
+      'BT altyapısı: güvenlik duvarı, sanallaştırma, NAS/yedekleme.',
+      'Logo uyumlu entegrasyonlar, ağ trafiği optimizasyonu.',
+      'Kamera/güvenlik sistemleri ve kullanıcı destek süreçleri.'
     ],
-    bullets_en:[
-      'Hardware/software integration for helicopter hoist, fuel probe and test gear.',
-      'Executed DO-178C, DO-254 and MIL-STD-810G compliance campaigns.',
-      'Automated endurance, environmental and field verification procedures.'
+    bullets_en: [
+      'IT infrastructure: firewalls, virtualization, NAS/backup platforms.',
+      'Logo-aligned integrations and network traffic optimisation.',
+      'Camera/security systems and user support operations.'
     ]
   },
   {
-    title_tr:'Sistem ve Ağ Mühendisi',
-    title_en:'Systems & Network Engineer',
-    company:'Zirve Bilişim',
-    time:'2012 — 2014',
-    location:'Kayseri',
-    summary_tr:'Kurumsal müşteriler için ağ, güvenlik ve ERP entegrasyon projeleri.',
-    summary_en:'Delivered networking, security and ERP integration projects for SMBs.',
-    bullets_tr:[
-      'Firewall, sanallaştırma, NAS ve yedekleme altyapılarının kurulumu.',
-      'Logo/Netsis entegrasyonları, saha servis otomasyonları ve performans optimizasyonu.',
-      'SLA tabanlı destek, izleme ve kullanıcı eğitimleri.'
+    title_tr: 'Yazılım Mühendisi',
+    title_en: 'Software Engineer',
+    company: 'Sedaş Bilgisayar',
+    time_tr: 'Ara 2019 — Haz 2021',
+    time_en: 'Dec 2019 — Jun 2021',
+    location: 'Kayseri',
+    bullets_tr: [
+      'Netsis/Logo B2B2C-ERP entegrasyonları.',
+      'TURPAK entegre istasyon yönetimi; el terminali ekranları.',
+      'Bulut yedekleme ve özel raporlama yazılımları.'
     ],
-    bullets_en:[
-      'Deployed firewall, virtualization, NAS and backup infrastructures.',
-      'Delivered Logo/Netsis integrations, field service automation and performance tuning.',
-      'Provided SLA-driven support, monitoring and user enablement.'
-    ]
-  },
-  {
-    title_tr:'Yazılım Mühendisi',
-    title_en:'Software Engineer',
-    company:'Sedaş Bilgisayar',
-    time:'2010 — 2012',
-    location:'Kayseri',
-    summary_tr:'Perakende ve enerji sektöründe ERP/otomasyon çözümleri geliştirme.',
-    summary_en:'Developed ERP and automation solutions for retail and energy operations.',
-    bullets_tr:[
-      'Netsis/Logo B2B2C-ERP entegrasyonları ve satış kanalı otomasyonları.',
-      'TURPAK akaryakıt istasyon yönetimi ve IoT sayaç takibi.',
-      'Bulut yedekleme, raporlama ve saha ekipleri için mobil uygulamalar.'
-    ],
-    bullets_en:[
-      'Built Netsis/Logo B2B2C-ERP integrations and sales channel automation.',
-      'Delivered TURPAK fuel station management with IoT meter tracking.',
-      'Implemented cloud backup, reporting and mobile tooling for field teams.'
+    bullets_en: [
+      'Netsis/Logo B2B2C-ERP integrations.',
+      'TURPAK integrated station management and handheld interfaces.',
+      'Cloud backup solutions and bespoke reporting software.'
     ]
   }
 ];
@@ -377,9 +355,9 @@ function renderExperience(){
     const el=document.createElement('div'); el.className='job';
     const title = currentLang==='en' ? j.title_en : j.title_tr;
     const bullets = currentLang==='en' ? j.bullets_en : j.bullets_tr;
-    const summary = currentLang==='en' ? j.summary_en : j.summary_tr;
-    const meta = [j.time, CFG.SHOW_LOCATION ? j.location : ''].filter(Boolean).join(' • ');
-    el.innerHTML = `<h4>${title} — ${j.company}</h4>${meta?`<div class="meta">${meta}</div>`:''}${summary?`<p class="summary">${summary}</p>`:''}
+    const metaTime = currentLang==='en' ? j.time_en : j.time_tr;
+    const meta = [metaTime, CFG.SHOW_LOCATION ? j.location : ''].filter(Boolean).join(' • ');
+    el.innerHTML = `<h4>${title} — ${j.company}</h4>${meta?`<div class="meta">${meta}</div>`:''}
       <ul>${bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
     list.appendChild(el);
   });
@@ -389,62 +367,78 @@ function renderExperience(){
 const PROJECTS = {
   tr: [
     {
-      title:'ESP32-CAM Darbe Algılama Sistemi',
-      desc:'Titreşim/darbe sensörü tetiklemeli görüntü yakalama, zaman damgası ve Telegram bildirim zinciri.',
-      impact:'%40 daha hızlı kalite kontrol reaksiyonu ve saha servislerine otomatik rapor.',
-      tags:['ESP32','IoT','Görüntü'],
-      type:'iot'
+      title: 'Araçta Sarsıntı Algılayan ESP32-CAM',
+      desc: 'G-sensör tetikli fotoğraf: altına tarih/saat + ivme yazısı basıp Telegram’a gönderir.',
+      tags: ['ESP32', 'IoT', 'Görüntü İşleme'],
+      type: 'iot'
     },
     {
-      title:'Vision/AI Hatları',
-      desc:'OpenCV + TensorFlow Lite pipeline ile üretim bandında hatalı ürün tespiti, edge inference ile gecikme minimizasyonu.',
-      impact:'Dakikada 120 ürün izleme, manuel kontrol yükünde %65 azalma.',
-      tags:['Python','AI','TensorFlow'],
-      type:'ai'
+      title: 'Yapay Zeka Destekli Görüntü İşleme Sistemleri',
+      desc: 'Yangın algılama, araç erişim, otopark yönetimi — Python/OpenCV/TensorFlow + ESP32 entegrasyonu.',
+      tags: ['Python', 'OpenCV', 'TensorFlow', 'AI'],
+      type: 'ai'
     },
     {
-      title:'Çevresel Test Otomasyonu',
-      desc:'DO-160G / MIL-STD-810 seanslarında veri toplama, otomatik raporlama ve arıza bildirimleri için .NET tabanlı platform.',
-      impact:'Test sürelerinde %30 kısalma, rapor hazırlama süresi dakikalara indi.',
-      tags:['C#','.NET','Test'],
-      type:'automation'
+      title: 'Otomatik Çevresel Test Sistemi',
+      desc: 'DO-160 & MIL-STD-810 uyumlu test senaryolarını C#/.NET ile otomatikleştirme, veri toplama ve raporlama.',
+      tags: ['C#', '.NET', 'Otomasyon'],
+      type: 'automation'
     },
     {
-      title:'ERP & Lojistik Entegrasyonu',
-      desc:'Logo ve Netsis ERP ile 3. parti lojistik, e-fatura/e-arşiv servisleri arasında iki yönlü senkronizasyon.',
-      impact:'Günlük 15K+ sipariş için hatasız veri akışı ve gerçek zamanlı stok görünürlüğü.',
-      tags:['ERP','Integration','REST'],
-      type:'software'
+      title: 'Kaan/Hürjet Yakıt Probu',
+      desc: 'Donanım + gömülü yazılım + entegrasyon ve test aşamaları.',
+      tags: ['Gömülü', 'C', 'C#'],
+      type: 'iot'
+    },
+    {
+      title: 'B2B Sipariş & Fatura Yönetimi',
+      desc: 'Logo ERP ile tam entegre B2B: sipariş, irsaliye, fatura; web arayüz ve servisler.',
+      tags: ['ASP.NET', 'MSSQL', 'Entegrasyon'],
+      type: 'software'
+    },
+    {
+      title: 'Akıllı Şehir Aydınlatma (ESP32 Mesh)',
+      desc: 'Mesh yapı, ölçeklenebilir topoloji, MQTT ile gerçek zamanlı izleme.',
+      tags: ['ESP32', 'MQTT', 'IoT'],
+      type: 'iot'
     }
   ],
   en: [
     {
-      title:'ESP32-CAM Shock Detection',
-      desc:'Vibration/impact sensor triggered imaging with timestamp overlays and Telegram alert pipeline.',
-      impact:'Enabled 40% faster quality responses plus automated service tickets.',
-      tags:['ESP32','IoT','Vision'],
-      type:'iot'
+      title: 'In-Vehicle Shock Sensing ESP32-CAM',
+      desc: 'G-sensor triggered snapshot; overlays date/time plus acceleration and sends it to Telegram.',
+      tags: ['ESP32', 'IoT', 'Computer Vision'],
+      type: 'iot'
     },
     {
-      title:'Vision/AI Production Lines',
-      desc:'OpenCV + TensorFlow Lite pipeline for on-line defect detection with low-latency edge inference.',
-      impact:'Monitors 120 parts per minute and removes 65% of manual inspection overhead.',
-      tags:['Python','AI','TensorFlow'],
-      type:'ai'
+      title: 'AI-Assisted Computer Vision Systems',
+      desc: 'Fire detection, vehicle access and parking control — Python/OpenCV/TensorFlow with ESP32 integration.',
+      tags: ['Python', 'OpenCV', 'TensorFlow', 'AI'],
+      type: 'ai'
     },
     {
-      title:'Environmental Test Automation',
-      desc:'.NET platform capturing DO-160G / MIL-STD-810 sessions with automated reports and incident alerts.',
-      impact:'Cut test runtime by 30% and reduced reporting to minutes.',
-      tags:['C#','.NET','Testing'],
-      type:'automation'
+      title: 'Automated Environmental Test System',
+      desc: 'Automating DO-160 & MIL-STD-810 scenarios via C#/.NET for data capture and reporting.',
+      tags: ['C#', '.NET', 'Automation'],
+      type: 'automation'
     },
     {
-      title:'ERP & Logistics Integration',
-      desc:'Bi-directional sync between Logo/Netsis ERP and 3rd-party logistics plus e-invoicing providers.',
-      impact:'Delivers error-free flow for 15K+ daily orders with real-time stock visibility.',
-      tags:['ERP','Integration','REST'],
-      type:'software'
+      title: 'Kaan/Hürjet Fuel Probe',
+      desc: 'Hardware plus embedded software development with integration and testing stages.',
+      tags: ['Embedded', 'C', 'C#'],
+      type: 'iot'
+    },
+    {
+      title: 'B2B Order & Invoice Management',
+      desc: 'Fully integrated B2B with Logo ERP covering orders, dispatch, invoicing and service interfaces.',
+      tags: ['ASP.NET', 'MSSQL', 'Integration'],
+      type: 'software'
+    },
+    {
+      title: 'Smart City Lighting (ESP32 Mesh)',
+      desc: 'Mesh topology with scalable expansion and real-time monitoring through MQTT.',
+      tags: ['ESP32', 'MQTT', 'IoT'],
+      type: 'iot'
     }
   ]
 };
@@ -460,14 +454,6 @@ function renderProjects(filter='all'){
     grid.appendChild(c);
   });
 }
-$$('.chip').forEach(chip=>{
-  chip.addEventListener('click', ()=>{
-    $$('.chip').forEach(c=>c.classList.remove('is-active'));
-    chip.classList.add('is-active');
-    renderProjects(chip.dataset.filter);
-  });
-});
-
 // SMS (optional)
 if(CFG.SHOW_SMS && CFG.CONTACT?.PHONE_E164){
   const smsBtn=document.createElement('a');
