@@ -197,23 +197,6 @@ async function applyI18n(){
 })();
 
 // language switch
-(async function initI18n(){
-  await applyI18n();
-  renderSkills();
-  renderExperience();
-  renderProjects(getActiveProjectFilter());
-  const langSelect = $('#langSelect');
-  if(langSelect){
-    langSelect.value = currentLang;
-    langSelect.addEventListener('change', async ()=>{
-      currentLang = langSelect.value;
-      localStorage.setItem('lang', currentLang);
-      await applyI18n();
-      renderSkills(); renderExperience(); renderProjects(getActiveProjectFilter());
-    });
-  }
-})();
-
 // typewriter
 (function typewriter(){
   const el = $('#typer'); if(!el) return;
@@ -470,6 +453,27 @@ function renderProjects(filter='all'){
     grid.appendChild(c);
   });
 }
+
+async function initI18n(){
+  await applyI18n();
+  renderSkills();
+  renderExperience();
+  renderProjects(getActiveProjectFilter());
+  const langSelect = $('#langSelect');
+  if(langSelect){
+    langSelect.value = currentLang;
+    langSelect.addEventListener('change', async ()=>{
+      currentLang = langSelect.value;
+      localStorage.setItem('lang', currentLang);
+      await applyI18n();
+      renderSkills();
+      renderExperience();
+      renderProjects(getActiveProjectFilter());
+    });
+  }
+}
+
+initI18n();
 // SMS (optional)
 if(CFG.SHOW_SMS && CFG.CONTACT?.PHONE_E164){
   const smsBtn=document.createElement('a');
