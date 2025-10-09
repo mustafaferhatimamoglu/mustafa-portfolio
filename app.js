@@ -276,8 +276,8 @@ const EXPERIENCE = [
     title_tr: 'Bilgi İşlem Uzmanı',
     title_en: 'IT Specialist',
     company: 'Şirikçioğlu Tekstil',
-    time_tr: 'Mar 2025 — Devam',
-    time_en: 'Mar 2025 — Present',
+    time_tr: '',
+    time_en: '',
     location: 'Kayseri',
     bullets_tr: [
       'Sunucu, network, güvenlik (firewall) kurulumu ve yönetimi.',
@@ -296,8 +296,8 @@ const EXPERIENCE = [
     title_tr: 'Sistem Mühendisi',
     title_en: 'Systems Engineer',
     company: 'Ayruz Endüstri',
-    time_tr: 'Şub 2023 — Ara 2024',
-    time_en: 'Feb 2023 — Dec 2024',
+    time_tr: '',
+    time_en: '',
     location: 'Kayseri',
     bullets_tr: [
       'Havacılık projelerinde tasarım, entegrasyon ve doğrulama.',
@@ -314,8 +314,8 @@ const EXPERIENCE = [
     title_tr: 'Sistem Mühendisi',
     title_en: 'Systems Engineer',
     company: 'Zirve Bilişim',
-    time_tr: 'Haz 2021 — Şub 2023',
-    time_en: 'Jun 2021 — Feb 2023',
+    time_tr: '',
+    time_en: '',
     location: 'Kayseri',
     bullets_tr: [
       'BT altyapısı: güvenlik duvarı, sanallaştırma, NAS/yedekleme.',
@@ -332,8 +332,8 @@ const EXPERIENCE = [
     title_tr: 'Yazılım Mühendisi',
     title_en: 'Software Engineer',
     company: 'Sedaş Bilgisayar',
-    time_tr: 'Ara 2019 — Haz 2021',
-    time_en: 'Dec 2019 — Jun 2021',
+    time_tr: '',
+    time_en: '',
     location: 'Kayseri',
     bullets_tr: [
       'Netsis/Logo B2B2C-ERP entegrasyonları.',
