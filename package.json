@@ -1,0 +1,11 @@
+{
+  "name": "mustafa-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test:layout": "node tests/check-overflow.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^22.8.0"
+  }
+}

@@ -63,7 +63,7 @@ a{color:var(--accent); text-decoration:none}
 .job ul{margin:0; padding-left:18px}
 
 /* Projects */
-.filters{display:flex; gap:8px; margin-bottom:12px}
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px}
 .chip{border:1px solid var(--border); background:var(--card); color:var(--fg); border-radius:999px; padding:6px 12px; cursor:pointer}
 .chip.is-active{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#001019; border:none; font-weight:700}
 .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
