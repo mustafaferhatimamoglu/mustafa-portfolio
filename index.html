@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mustafa Ferhat İmamoğlu - Bilgisayar Mühendisi Portfolyosu. Teknik altyapı, ağ güvenliği ve otomasyon.">
+    <title>Mustafa Ferhat İmamoğlu | Bilgisayar Mühendisi</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <!-- Language Switcher Panel (IP Based) -->
+    <div id="lang-panel" class="lang-panel hidden">
+        <div class="lang-panel-content">
+            <p id="lang-panel-text">It looks like you are visiting from outside Turkey. Would you like to switch to English?</p>
+            <div class="lang-panel-btns">
+                <button id="btn-en" class="btn">English</button>
+                <button id="btn-tr-stay" class="btn btn-alt">Türkçe Kal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persistent Language Toggle (Bottom Left) -->
+    <div class="lang-toggle" id="lang-toggle">
+        <img src="https://flagcdn.com/w40/tr.png" id="lang-flag" alt="Language">
+        <span id="lang-code">TR</span>
+    </div>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <div class="theme-toggle" id="theme-toggle" title="Tema Değiştir">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">MFI.SYSTEMS</a>
+            <div class="nav-links">
+                <a href="#hero" data-key="nav-hero">HAYAT</a>
+                <a href="#about" data-key="nav-about">HAKKINDA</a>
+                <a href="#skills" data-key="nav-skills">YETKİNLİK</a>
+                <a href="#projects" data-key="nav-projects">PROJELER</a>
+                <a href="#contact" data-key="nav-contact">İLETİŞİM</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container hero-content">
+                <span class="title-glitch" id="hero-title">INITIALIZING...</span>
+                <h1 id="hero-name">Mustafa Ferhat İmamoğlu</h1>
+                <p id="hero-welcome">Yükleniyor...</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="mono-text" style="margin-bottom: 2rem;" data-key="about-title">[01] Hakkında</h2>
+                <div class="about-grid">
+                    <div class="about-text" id="about-content">
+                        <p>Yükleniyor...</p>
+                    </div>
+                    <div class="about-visual">
+                        <div class="skill-card" style="border-style: dashed;">
+                            <p class="mono-text" style="font-size: 0.8rem;" id="about-status-box">
+                                // STATUS: AVAILABLE<br>
+                                // LOCATION: KAYSERI, TR<br>
+                                // ROLE: COMPUTER & MECHANICAL ENGINEER
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="mono-text" style="margin-bottom: 3rem;" data-key="skills-title">[02] Uzmanlık Alanları</h2>
+                <div class="skills-grid" id="skills-container">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="mono-text" style="margin-bottom: 1rem;" data-key="projects-title">[03] Seçilmiş Projeler</h2>
+                <p class="mono-text" style="font-size: 0.8rem; margin-bottom: 3rem; color: var(--text-secondary);" data-key="projects-desc">// 30+ MÜHENDİSLİK PROJESİ</p>
+            </div>
+            
+            <div class="projects-slider-container">
+                <div class="projects-track" id="projects-container">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+            
+            <div class="container slider-controls" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+                <button class="btn-circle" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="btn-circle" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="mono-text" style="margin-bottom: 3rem; text-align: center;" data-key="contact-title">[04] Bağlantı Kur</h2>
+                <div class="contact-container">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <div class="form-group">
+                            <label for="name" class="mono-text" style="font-size: 0.8rem;" data-key="label-name">isim_soyisim</label>
+                            <input type="text" name="name" id="name" required placeholder="Adınız Soyadınız">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="mono-text" style="font-size: 0.8rem;" data-key="label-email">eposta_adresi</label>
+                            <input type="email" name="email" id="email" required placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="mono-text" style="font-size: 0.8rem;" data-key="label-msg">mesaj_icerigi</label>
+                            <textarea name="message" id="message" rows="5" required placeholder="Mesajınız..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="submit-btn" data-key="btn-send">MESAJI GÖNDER</button>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+
+                    <div class="social-links">
+                        <a href="#" id="github-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" id="linkedin-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:mustafaferhatimamoglu@gmail.com" id="email-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-key="footer-text">&copy; 2026 MUSTAFA FERHAT İMAMOĞLU // TÜM HAKLARI SAKLIDIR.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

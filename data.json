@@ -1,0 +1,148 @@
+{
+  "tr": {
+    "hero": {
+      "name": "Mustafa Ferhat İmamoğlu",
+      "title": "Bilgisayar & Makine Mühendisi",
+      "welcomeText": "Yazılım, donanım ve siber güvenlik kesişiminde, makine mühendisliği disipliniyle harmanlanmış mühendislik çözümleri."
+    },
+    "about": {
+      "text": "Kayseri'de ikamet ediyorum. Makine mühendisliği altyapımı bilgisayar mühendisliği ile birleştirerek; siber güvenlik, gömülü sistemler ve endüstriyel otomasyon alanlarında karmaşık mimariler kuruyorum. Sistemlerin hem fiziksel hem de dijital güvenliğini ve verimliliğini en üst düzeye çıkarmak temel vizyonumdur."
+    },
+    "skills": [
+      {
+        "category": "Yazılım & Algoritma",
+        "items": ["Python", "C/C++", "Java", "JavaScript (ES6+)", "Go", "Rust", "Swift", "Design Patterns", "Algorithmic Trading", "Data Structures"]
+      },
+      {
+        "category": "Siber Güvenlik & Savunma",
+        "items": ["Red Cell Operasyonları", "Kali Linux", "Sophos Firewall", "SD-WAN Mimarisi", "Sızma Testleri (Pentest)", "Kriptografi", "Adli Bilişim", "Zararlı Yazılım Analizi", "SOC Operasyonları", "Ağ Güvenliği Profilleme"]
+      },
+      {
+        "category": "Donanım & Gömülü Sistemler",
+        "items": ["FPGA Tasarımı", "VHDL/Verilog", "Embedded C", "Real-Time OS (RTOS)", "PCB Tasarımı (Altium)", "Modbus/PLC", "CAN Bus", "IoT Mimarileri", "Sensor Fusion", "Firmware Geliştirme"]
+      },
+      {
+        "category": "Yapay Zeka & Veri Bilimi",
+        "items": ["TensorFlow", "PyTorch", "OpenCV", "NLP (Doğal Dil İşleme)", "Deep Learning", "Bilgisayarlı Görü", "Big Data (Spark)", "Pandas & NumPy", "Reinforcement Learning", "Prediktif Analiz"]
+      },
+      {
+        "category": "Bulut & DevSecOps",
+        "items": ["Docker & Kubernetes", "AWS / Azure", "CI/CD Pipelines", "Jenkins", "Terraform (IaC)", "Microservices", "Nginx Config", "Prometheus & Grafana", "Linux SysAdmin", "Ansible"]
+      },
+      {
+        "category": "Robotik & Mekatronik",
+        "items": ["ROS (Robot OS)", "Kinematik Çözücüler", "PID Kontrol", "Servo/Step Kontrol", "CNC Sistemleri", "Hidrolik & Pnömatik", "CAD/CAM (SolidWorks)", "3D Simulasyon", "Robot Kol Programlama", "Otonom Araçlar"]
+      }
+    ],
+    "projects": [
+      { "id": "rmm", "title": "Python RMM", "description": "Sıfırdan geliştirilmiş, ticari seviyede uzaktan yönetim ve izleme aracı.", "tech": ["Python", "FastAPI"] },
+      { "id": "config", "title": "Araç Konfigüratör", "description": "Dinamik renk ve görünüm değiştirme modülü.", "tech": ["JS", "CSS3"] },
+      { "id": "trading", "title": "Trading Bot", "description": "Gelişmiş indikatörler ve backtest stratejileri içeren otomasyon botu.", "tech": ["Python", "Pandas"] },
+      { "id": "solar", "title": "Güneş Takip Sistemi", "description": "Panellerin verimliliğini %40 artıran çift eksenli takip mekanizması.", "tech": ["Embedded C", "Mechanical"] },
+      { "id": "face", "title": "AI Yüz Tanıma", "description": "Düşük gecikmeli, biyometrik geçiş kontrol sistemi.", "tech": ["OpenCV", "Python"] },
+      { "id": "cnc", "title": "CNC Dijital İkiz", "description": "Gerçek zamanlı sensör verileriyle CNC tezgah simülasyonu.", "tech": ["WebSockets", "3D JS"] },
+      { "id": "ids", "title": "Ağ Saldırı Tespit", "description": "Anomali tespiti yapan özel IDS yazılımı.", "tech": ["Python", "Scapy"] },
+      { "id": "robot-arm", "title": "Robot Kol Kontrolü", "description": "6 eksenli endüstriyel robot kolu kinematik çözücü.", "tech": ["C++", "Kinematics"] },
+      { "id": "smart-home", "title": "IoT Akıllı Ev", "description": "Tamamen offline çalışan, gizlilik odaklı ev otomasyonu.", "tech": ["MQTT", "ESP32"] },
+      { "id": "blockchain", "title": "Lojistik Blokzinciri", "description": "Tedarik zinciri şeffaflığı için dağıtık kayıt sistemi.", "tech": ["Solidity", "Node.js"] },
+      { "id": "drone", "title": "Otonom Drone", "description": "Görüntü işleme ile hedef takibi yapan drone yazılımı.", "tech": ["C++", "ROS"] },
+      { "id": "firewall", "title": "Kural Optimizasyon", "description": "Firewall kurallarını analiz edip çakışmaları gideren araç.", "tech": ["Python", "Bash"] },
+      { "id": "quality", "title": "Otomatik Kalite Kontrol", "description": "Üretim hattındaki hataları tespit eden derin öğrenme modeli.", "tech": ["TensorFlow", "Vision"] },
+      { "id": "weather", "title": "LoRa Hava İstasyonu", "description": "10km mesafeden veri gönderen düşük enerjili sensör ağı.", "tech": ["LoRa", "Embedded"] },
+      { "id": "thermal", "title": "Termal Tarayıcı", "description": "Yüksek hassasiyetli endüstriyel termal görüntüleme.", "tech": ["Embedded", "I2C"] },
+      { "id": "honeypot", "title": "SSH Honeypot", "description": "Saldırganları izlemek için tasarlanmış sahte servis.", "tech": ["Python", "Security"] },
+      { "id": "sniff", "title": "Paket Analizci", "description": "Ham soketler kullanarak geliştirilmiş trafik analizcisi.", "tech": ["C", "Networking"] },
+      { "id": "hospital", "title": "Hasta İzleme", "description": "Hastaneler için gerçek zamanlı vital bulgu takip sistemi.", "tech": ["React", "IoT"] },
+      { "id": "parking", "title": "Akıllı Park", "description": "Boş alanları görüntü işleme ile tespit eden sistem.", "tech": ["AI", "Python"] },
+      { "id": "inv", "title": "RFID Stok Takip", "description": "Depo yönetimi için RFID tabanlı envanter otomasyonu.", "tech": ["RFID", "Java"] },
+      { "id": "dist", "title": "Dağıtık Dosya Sistemi", "description": "Yüksek erişilebilirlik sunan cluster yapısı.", "tech": ["Go", "gRPC"] },
+      { "id": "crypto", "title": "Şifreleme Araç Seti", "description": "Modern kriptografik algoritmalar uygulaması.", "tech": ["C#", "Security"] },
+      { "id": "pid", "title": "Motor Hız Kontrol", "description": "Hassas hız ayarı için PID algoritması uygulaması.", "tech": ["C", "Control Systems"] },
+      { "id": "proxy", "title": "Ters Proxy", "description": "Yük dengeleyici özellikli HTTP proxy sunucusu.", "tech": ["Rust", "Networking"] },
+      { "id": "ransom", "title": "Fidye Yazılım Simülatörü", "description": "Eğitim amaçlı kontrollü saldırı simülasyonu.", "tech": ["Security", "Python"] },
+      { "id": "plc", "title": "Modbus Köprüsü", "description": "PLC verilerini buluta aktaran gateway yazılımı.", "tech": ["Modbus", "Python"] },
+      { "id": "rover", "title": "Su Altı ROV", "description": "Keşif amaçlı su altı aracının uzaktan kontrol yazılımı.", "tech": ["C++", "Electronics"] },
+      { "id": "log", "title": "Log Analizci", "description": "Milyonlarca satır logu gerçek zamanlı işleyen motor.", "tech": ["ELK", "DevOps"] },
+      { "id": "voice", "title": "Mühendislik Ses Asistanı", "description": "Ses komutlarıyla CAD/CAM komutlarını yönetme.", "tech": ["Speech API", "Python"] },
+      { "id": "hyd", "title": "Hidrolik Pres Kontrol", "description": "Endüstriyel pres makineleri için güvenlikli kontrol ünitesi.", "tech": ["PLC", "Safety"] },
+      { "id": "grid", "title": "Akıllı Şebeke", "description": "Enerji dağıtımını optimize eden yazılım mimarisi.", "tech": ["Data Science", "Energy"] },
+      { "id": "cad", "title": "Web CAD Görüntüleyici", "description": "Tarayıcıda STEP dosyalarını görüntüleme aracı.", "tech": ["Three.js", "WebAssembly"] },
+      { "id": "zero", "title": "Sıfır Güven Mimarisi", "description": "Kurumsal ağlar için kimlik tabanlı güvenlik tasarımı.", "tech": ["Security", "Network"] },
+      { "id": "bug", "title": "Zafiyet Tarama", "description": "Web uygulamalarındaki açıklarını bulan otomatize araç.", "tech": ["Python", "Web Security"] },
+      { "id": "vision", "title": "QR Lojistik", "description": "Kamera ile hızlı paket tasnif sistemi.", "tech": ["Computer Vision", "Python"] }
+    ]
+  },
+  "en": {
+    "hero": {
+      "name": "Mustafa Ferhat İmamoğlu",
+      "title": "Computer & Mechanical Engineer",
+      "welcomeText": "Engineering solutions at the intersection of software, hardware, and cyber security, blended with mechanical engineering discipline."
+    },
+    "about": {
+      "text": "Based in Kayseri. I combine my mechanical engineering background with computer engineering to build complex architectures in cyber security, embedded systems, and industrial automation. My vision is to maximize both the physical and digital security and efficiency of systems."
+    },
+    "skills": [
+      {
+        "category": "Software & Algorithms",
+        "items": ["Python", "C/C++", "Java", "JavaScript (ES6+)", "Go", "Rust", "Swift", "Design Patterns", "Algorithmic Trading", "Data Structures"]
+      },
+      {
+        "category": "Cyber Security & Defense",
+        "items": ["Red Cell Operations", "Kali Linux", "Sophos Firewall", "SD-WAN Architecture", "Pentesting", "Cryptography", "Forensics", "Malware Analysis", "SOC Operations", "Network Profiling"]
+      },
+      {
+        "category": "Hardware & Embedded Systems",
+        "items": ["FPGA Design", "VHDL/Verilog", "Embedded C", "Real-Time OS (RTOS)", "PCB Design (Altium)", "Modbus/PLC", "CAN Bus", "IoT Architectures", "Sensor Fusion", "Firmware Development"]
+      },
+      {
+        "category": "AI & Data Science",
+        "items": ["TensorFlow", "PyTorch", "OpenCV", "NLP", "Deep Learning", "Computer Vision", "Big Data (Spark)", "Pandas & NumPy", "Reinforcement Learning", "Predictive Analysis"]
+      },
+      {
+        "category": "Cloud & DevSecOps",
+        "items": ["Docker & Kubernetes", "AWS / Azure", "CI/CD Pipelines", "Jenkins", "Terraform (IaC)", "Microservices", "Nginx Config", "Prometheus & Grafana", "Linux SysAdmin", "Ansible"]
+      },
+      {
+        "category": "Robotics & Mechatronics",
+        "items": ["ROS (Robot OS)", "Kinematic Solvers", "PID Control", "Servo/Step Control", "CNC Systems", "Hydraulics & Pneumatics", "CAD/CAM (SolidWorks)", "3D Simulation", "Robot Arm Coding", "Autonomous Vehicles"]
+      }
+    ],
+    "projects": [
+      { "id": "rmm", "title": "Python RMM", "description": "A built-from-scratch, commercial-grade remote monitoring and management tool.", "tech": ["Python", "FastAPI"] },
+      { "id": "config", "title": "Car Configurator", "description": "Dynamic color and appearance modification module.", "tech": ["JS", "CSS3"] },
+      { "id": "trading", "title": "Trading Bot", "description": "Automation bot featuring advanced indicators and backtest strategies.", "tech": ["Python", "Pandas"] },
+      { "id": "solar", "title": "Solar Tracking System", "description": "Dual-axis tracking mechanism increasing panel efficiency by 40%.", "tech": ["Embedded C", "Mechanical"] },
+      { "id": "face", "title": "AI Facial Recognition", "description": "Low-latency, biometric access control system.", "tech": ["OpenCV", "Python"] },
+      { "id": "cnc", "title": "CNC Digital Twin", "description": "CNC machine simulation with real-time sensor data.", "tech": ["WebSockets", "3D JS"] },
+      { "id": "ids", "title": "Network IDS", "description": "Custom IDS software for anomaly detection.", "tech": ["Python", "Scapy"] },
+      { "id": "robot-arm", "title": "Robot Arm Control", "description": "Kinematics solver for 6-axis industrial robot arm.", "tech": ["C++", "Kinematics"] },
+      { "id": "smart-home", "title": "IoT Smart Home", "description": "Privacy-focused home automation running locally.", "tech": ["MQTT", "ESP32"] },
+      { "id": "blockchain", "title": "Logistic Blockchain", "description": "Distributed ledger for supply chain transparency.", "tech": ["Solidity", "Node.js"] },
+      { "id": "drone", "title": "Autonomous Drone", "description": "Drone software for target tracking with image processing.", "tech": ["C++", "ROS"] },
+       { "id": "firewall", "title": "Rule Optimizer", "description": "Tool for analyzing and resolving firewall rule conflicts.", "tech": ["Python", "Bash"] },
+      { "id": "quality", "title": "Automated QC", "description": "Deep learning model detecting defects on production lines.", "tech": ["TensorFlow", "Vision"] },
+      { "id": "weather", "title": "LoRa Weather Station", "description": "Low-power sensor network transmitting data up to 10km.", "tech": ["LoRa", "Embedded"] },
+      { "id": "thermal", "title": "Thermal Scanner", "description": "High-precision industrial thermal imaging.", "tech": ["Embedded", "I2C"] },
+      { "id": "honeypot", "title": "SSH Honeypot", "description": "Fake service designed to monitor attackers.", "tech": ["Python", "Security"] },
+      { "id": "sniff", "title": "Packet Sniffer", "description": "Traffic analyzer developed using raw sockets.", "tech": ["C", "Networking"] },
+      { "id": "hospital", "title": "Patient Monitoring", "description": "Real-time vital sign tracking system for hospitals.", "tech": ["React", "IoT"] },
+      { "id": "parking", "title": "Smart Parking", "description": "AI-based system detecting vacant spots via vision.", "tech": ["AI", "Python"] },
+      { "id": "inv", "title": "RFID Tracking", "description": "RFID-based inventory automation for warehouse management.", "tech": ["RFID", "Java"] },
+      { "id": "dist", "title": "Distributed FS", "description": "High-availability cluster file system.", "tech": ["Go", "gRPC"] },
+      { "id": "crypto", "title": "Crypto Toolset", "description": "Implementation of modern cryptographic algorithms.", "tech": ["C#", "Security"] },
+      { "id": "pid", "title": "Motor Speed Control", "description": "PID algorithm implementation for precise motor speed.", "tech": ["C", "Control Systems"] },
+      { "id": "proxy", "title": "Reverse Proxy", "description": "HTTP proxy server with load balancing features.", "tech": ["Rust", "Networking"] },
+      { "id": "ransom", "title": "Ransomware Sim", "description": "Controlled attack simulation for educational purposes.", "tech": ["Security", "Python"] },
+      { "id": "plc", "title": "Modbus Bridge", "description": "Gateway software transferring PLC data to the cloud.", "tech": ["Modbus", "Python"] },
+      { "id": "rover", "title": "Underwater ROV", "description": "Remote control software for exploration ROV.", "tech": ["C++", "Electronics"] },
+      { "id": "log", "title": "Log Analyzer", "description": "Engine processing millions of log lines in real-time.", "tech": ["ELK", "DevOps"] },
+      { "id": "voice", "title": "Engineering Voice Assistant", "description": "CAD/CAM command management via voice.", "tech": ["Speech API", "Python"] },
+      { "id": "hyd", "title": "Hydraulic Press Control", "description": "Safe control unit for industrial press machinery.", "tech": ["PLC", "Safety"] },
+      { "id": "grid", "title": "Smart Grid", "description": "Software architecture optimizing energy distribution.", "tech": ["Data Science", "Energy"] },
+      { "id": "cad", "title": "Web CAD Viewer", "description": "Tool for viewing STEP files in the browser.", "tech": ["Three.js", "WebAssembly"] },
+      { "id": "zero", "title": "Zero Trust Archetype", "description": "Identity-based security design for corporate networks.", "tech": ["Security", "Network"] },
+      { "id": "bug", "title": "Vulnerability Scan", "description": "Automated tool for finding web application flaws.", "tech": ["Python", "Web Security"] },
+      { "id": "vision", "title": "QR Logistics", "description": "Fast package sorting system using computer vision.", "tech": ["Computer Vision", "Python"] }
+    ]
+  }
+}
