@@ -1,5 +1,5 @@
 @echo off
-echo Yerel sunucu 5500 portunda baslatiliyor...
-start http://localhost:5500
-python -m http.server 5500
+echo Yerel sunucu 5502 portunda baslatiliyor...
+start http://localhost:5502
+python -m http.server 5502
 pause

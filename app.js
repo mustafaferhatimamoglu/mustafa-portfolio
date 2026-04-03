@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langPanel = document.getElementById('lang-panel');
     const langToggle = document.getElementById('lang-toggle');
     const projectsContainer = document.getElementById('projects-container');
-    
+
     // Telegram Configuration
     const TG_TOKEN = '8463888693:AAHS2xsejdWebakw3DOklRljfR9SwQjOCak';
     const TG_CHAT_ID = '6069420562';
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('data.json');
             currentData = await response.json();
-            
+
             // Check IP only if no language preference is saved
             if (!localStorage.getItem('lang')) {
                 checkLocation();
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showLangPanel() {
         langPanel.classList.remove('hidden');
-        
+
         document.getElementById('btn-en').addEventListener('click', () => {
             switchLanguage('en');
             langPanel.classList.add('hidden');
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function switchLanguage(lang) {
         currentLang = lang;
         localStorage.setItem('lang', lang);
-        
+
         // Update Flag UI
         const flagImg = document.getElementById('lang-flag');
         const langCode = document.getElementById('lang-code');
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Rendering Logic
     function renderContent() {
         const d = currentData[currentLang];
-        
+
         // Hero
         document.getElementById('hero-name').textContent = d.hero.name;
         document.getElementById('hero-welcome').textContent = d.hero.welcomeText;
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // About
         document.getElementById('about-content').innerHTML = `<p>${d.about.text}</p>`;
         const phone = currentLang === 'tr' ? 'TEL: 0555 005 1800' : 'PHONE: +90 555 005 1800';
-        document.getElementById('about-status-box').innerHTML = currentLang === 'tr' ? 
+        document.getElementById('about-status-box').innerHTML = currentLang === 'tr' ?
             `// KONUM: KAYSERİ, TR<br>// ROL: BİLGİSAYAR & MAKİNE MÜHENDİSİ<br>// ${phone}` :
             `// LOCATION: KAYSERI, TR<br>// ROLE: COMPUTER & MECHANICAL ENGINEER<br>// ${phone}`;
 
@@ -163,11 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
         skills.forEach(skillGroup => {
             const card = document.createElement('div');
             card.className = 'skill-card';
-            
+
             // Reference site inspired: Skill Meters instead of just tags
             const meters = skillGroup.items.map(item => {
                 // Proficiency levels (statistically realistic)
-                const level = Math.floor(Math.random() * 16) + 80; 
+                const level = Math.floor(Math.random() * 16) + 80;
                 return `
                     <div class="skill-item">
                         <div class="skill-info">
@@ -193,20 +193,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Typewriter Effect
     let typewriterIndex = 0;
     let isDeleting = false;
+    let charIndex = 0;
     function initTypewriter() {
         const target = document.getElementById('hero-title');
         const rolesTR = [
             'Bilgisayar Mühendisi', 'Makine Mühendisi', 'Siber Güvenlik Uzmanı', 'Gömülü Sistem Tasarımcısı',
             'Full Stack Developer', 'IoT Mimarı', 'Ağ Güvenlik Analisti', 'PLC Programcısı',
             'Endüstriyel Otomasyon Mühendisi', 'Yapay Zeka Araştırmacısı', 'DevSecOps Mühendisi',
-            'Robotik Sistem Geliştiricisi', 'Penetrasyon Test Uzmanı', 'Bulut Güvenlik Mimarı', 
+            'Robotik Sistem Geliştiricisi', 'Penetrasyon Test Uzmanı', 'Bulut Güvenlik Mimarı',
             'FPGA Geliştiricisi', 'Backend Mühendisi', 'Frontend Uzmanı', 'Mobil Uygulama Geliştiricisi',
             'Donanım Tasarımcısı', 'Mekatronik Mühendisi', 'Veri Bilimcisi', 'Blokzinciri Yazılımcısı',
             'Linux Sistem Yöneticisi', 'Savunma Sanayii Yazılımcısı', 'SCADA Uzmanı', 'RF Mühendisi',
-            'Sızma Testi Koordinatörü', 'Otomotiv Yazılım Uzmanı', 'Dijital İkiz Geliştiricisi', 
+            'Sızma Testi Koordinatörü', 'Otomotiv Yazılım Uzmanı', 'Dijital İkiz Geliştiricisi',
             'Kriptografi Araştırmacısı', 'Firmware Mühendisi', 'Kontrol Sistemleri Uzmanı'
         ];
-        
+
         const rolesEN = [
             'Computer Engineer', 'Mechanical Engineer', 'Cyber Security Expert', 'Embedded Systems Designer',
             'Full Stack Developer', 'IoT Architect', 'Network Security Analyst', 'PLC Programmer',
@@ -220,25 +221,29 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         const roles = currentLang === 'tr' ? rolesTR : rolesEN;
-        
+
         let currentRole = roles[typewriterIndex % roles.length];
-        let fullText = currentRole;
-        let displayText = isDeleting ? 
-            fullText.substring(0, target.textContent.length - 1) : 
-            fullText.substring(0, target.textContent.length + 1);
+
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+
+        let displayText = currentRole.substring(0, charIndex);
 
         target.textContent = '\u00A0' + displayText;
 
         // Ultra-fast speed (3x+ optimization)
-        let typeSpeed = isDeleting ? 10 : 25; 
+        let typeSpeed = isDeleting ? 10 : 25;
 
-        if (!isDeleting && displayText === fullText) {
-            typeSpeed = 400; // Minimal pause at end
+        if (!isDeleting && charIndex === currentRole.length) {
+            typeSpeed = 400; // Pause at end to read
             isDeleting = true;
-        } else if (isDeleting && displayText === '') {
+        } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             typewriterIndex++;
-            typeSpeed = 100; // Minimal pause after delete
+            typeSpeed = 100; // Pause before typing next word
         }
 
         setTimeout(initTypewriter, typeSpeed);
@@ -253,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const formData = new FormData(form);
             const name = formData.get('name');
             const email = formData.get('email');
@@ -303,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'project-card';
             const techList = project.tech.map(t => `<span>${t}</span>`).join('');
             const btnText = currentLang === 'tr' ? 'İNCELE' : 'VIEW';
-            
+
             card.innerHTML = `
                 <div style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
@@ -366,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = canvas.getContext('2d');
         let particles = [];
         const particleCount = 100;
-        
+
         const mouse = {
             x: null,
             y: null,
@@ -416,15 +421,15 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
-                
+
                 for (let j = i; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    
+
                     if (distance < 100) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - distance/100})`;
+                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - distance / 100})`;
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
