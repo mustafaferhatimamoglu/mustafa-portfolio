@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
     initParticles();
     setupContactForm();
+    setupSmoothScrolling(); // Smooth scrolling efekti eklendi
 
     async function init() {
         try {
@@ -30,6 +31,25 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Initialization error:', error);
         }
+    }
+
+    // Vanilla JS Smooth Scrolling (Kullanıcı Deneyimi İyileştirmesi)
+    function setupSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     }
 
     // 2. IP & Location Logic
@@ -313,6 +333,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <span class="mono-text" style="font-size: 0.7rem;">// ${project.id.toUpperCase()}</span>
+                        
+                        <!-- Performans Optimizasyonu: İleride eklenebilecek görseller için otomatik lazy loading -->
+                        ${project.image ? `<img src="${project.image}" alt="${project.title}" loading="lazy" style="width: 100%; margin-top: 1rem; border-radius: 4px;">` : ''}
+                        
                         <h3 style="margin-top: 0.5rem; font-size: 1.1rem;">${project.title}</h3>
                         <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 1rem 0;">${project.description}</p>
                         <div class="project-tech" style="margin-bottom: 2rem;">
@@ -323,6 +347,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             projectsContainer.appendChild(card);
+        });
+
+        // Mevcut veya sonradan eklenmiş tüm <img> etiketlerine loading="lazy" zorlaması eklendi
+        const images = projectsContainer.querySelectorAll('img');
+        images.forEach(img => {
+            if (!img.getAttribute('loading')) {
+                img.setAttribute('loading', 'lazy');
+            }
         });
     }
 
