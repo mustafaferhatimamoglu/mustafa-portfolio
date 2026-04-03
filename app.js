@@ -120,9 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 'projects-title': '[03] Seçilmiş Projeler',
                 'projects-desc': '// 30+ MÜHENDİSLİK PROJESİ',
                 'contact-title': '[04] Bağlantı Kur',
-                'label-name': 'isim_soyisim',
-                'label-email': 'eposta_adresi',
-                'label-msg': 'mesaj_icerigi',
+                'label-name': 'Ad Soyad',
+                'label-email': 'E-posta Adresi',
+                'label-msg': 'Mesajınız',
                 'btn-send': 'MESAJI GÖNDER',
                 'footer-text': `© ${new Date().getFullYear()} MUSTAFA FERHAT İMAMOĞLU // TÜM HAKLARI SAKLIDIR.`
             },
@@ -137,9 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 'projects-title': '[03] Selected Projects',
                 'projects-desc': '// 30+ ENGINEERING PROJECTS',
                 'contact-title': '[04] Get In Touch',
-                'label-name': 'full_name',
-                'label-email': 'email_address',
-                'label-msg': 'message_content',
+                'label-name': 'Full Name',
+                'label-email': 'Email Address',
+                'label-msg': 'Your Message',
                 'btn-send': 'SEND MESSAGE',
                 'footer-text': `© ${new Date().getFullYear()} MUSTAFA FERHAT İMAMOĞLU // ALL RIGHTS RESERVED.`
             }

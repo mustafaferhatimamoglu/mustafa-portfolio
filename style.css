@@ -287,11 +287,34 @@ nav .container {
     padding: 2.5rem;
     min-width: 400px;
     height: 100%;
-    transition: var(--transition-speed);
+    transition: all var(--transition-speed);
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(5px); /* Glassmorphism */
+    border-radius: 4px;
+}
+
+.project-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px var(--accent-glow);
+    transform: translateY(-5px);
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tech span {
+    font-family: var(--font-mono);
+    padding: 0.2rem 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    border-radius: 3px;
+    color: var(--accent-color);
 }
 
 .btn-circle {
@@ -446,6 +469,12 @@ input, textarea {
 input:focus, textarea:focus {
     border-color: var(--accent-color);
     outline: none;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+input:focus:invalid:not(:placeholder-shown), textarea:focus:invalid:not(:placeholder-shown) {
+    border-color: #ff3232;
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.2);
 }
 
 .form-status {
