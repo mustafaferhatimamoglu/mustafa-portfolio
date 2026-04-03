@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Application
     init();
     initParticles();
-    initThemeToggle();
     setupContactForm();
 
     async function init() {
@@ -245,30 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(initTypewriter, typeSpeed);
     }
 
-    // 7. Theme Toggle Logic
-    function initThemeToggle() {
-        const toggle = document.getElementById('theme-toggle');
-        const icon = document.getElementById('theme-icon');
-        const body = document.body;
-
-        // Load saved theme
-        if (localStorage.getItem('theme') === 'light') {
-            body.classList.add('light-theme');
-            icon.classList.replace('fa-moon', 'fa-sun');
-        }
-
-        toggle.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            const isLight = body.classList.contains('light-theme');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-            
-            if (isLight) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
-    }
 
     // 8. Telegram Contact Form
     function setupContactForm() {

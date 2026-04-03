@@ -15,18 +15,6 @@
     --glass-bg: rgba(255, 255, 255, 0.02);
 }
 
-/* Light Theme (Refined for reduced eye strain) */
-body.light-theme {
-    --bg-color: #fcfcfc;
-    --card-bg: #ffffff;
-    --accent-color: #0369a1;
-    --accent-glow: rgba(3, 105, 161, 0.1);
-    --accent-hover: #075985;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --border-color: #e2e8f0;
-    --glass-bg: rgba(0, 0, 0, 0.02);
-}
 
 * {
     margin: 0;
@@ -79,30 +67,6 @@ section {
     padding: 100px 0;
 }
 
-/* Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 2000;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition-speed);
-    backdrop-filter: blur(10px);
-}
-
-.theme-toggle:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 10px var(--accent-glow);
-    transform: scale(1.1);
-}
 
 /* Navigation */
 nav {
